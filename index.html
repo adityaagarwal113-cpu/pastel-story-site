@@ -6,7 +6,9 @@
 <title>The Pastel Story — By Shiwani</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ══════════ RESET & TOKENS ══════════ */
+/* ════════════════════════════════════════
+   RESET & DESIGN TOKENS
+════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --cream:#fdf6ee;--blush:#f5ddd6;--gold:#c9a96e;--gold-d:#b8864a;
@@ -16,15 +18,19 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;min-height:100vh}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.3;
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.28;
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.04'/%3E%3C/svg%3E")}
 
-/* ══════════ VIEWS ══════════ */
-.view{display:none;min-height:100vh;animation:viewIn .42s ease both}
+/* ════════════════════════════════════════
+   VIEW SYSTEM
+════════════════════════════════════════ */
+.view{display:none;min-height:100vh;animation:viewIn .4s ease both}
 .view.active{display:block}
 @keyframes viewIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-/* ══════════ NAV ══════════ */
+/* ════════════════════════════════════════
+   NAV
+════════════════════════════════════════ */
 nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:1rem 4%;background:rgba(253,246,238,.88);backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border-bottom:1px solid var(--gborder)}
 .nav-logo{font-family:'Cormorant Garamond',serif;font-size:clamp(1rem,2.5vw,1.4rem);font-weight:300;letter-spacing:.2em;color:var(--dark);cursor:pointer;background:none;border:none}
 .nav-logo span{color:var(--gold)}
@@ -35,7 +41,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .nav-cart-btn:hover{opacity:.85}
 .cart-badge{background:#fff;color:var(--gold);border-radius:50%;width:17px;height:17px;display:inline-flex;align-items:center;justify-content:center;font-size:.58rem;font-weight:600}
 
-/* ══════════ BUTTONS ══════════ */
+/* ════════════════════════════════════════
+   GLOBAL BUTTONS
+════════════════════════════════════════ */
 .btn-gold{display:inline-flex;align-items:center;gap:.7rem;padding:.9rem 2rem;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;font-family:'Jost',sans-serif;font-size:.68rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;border:none;cursor:pointer;transition:transform .3s,box-shadow .3s;box-shadow:0 8px 26px rgba(201,169,110,.35)}
 .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(201,169,110,.45)}
 .btn-ghost{display:inline-flex;align-items:center;gap:.7rem;padding:.85rem 1.8rem;border:1px solid var(--gold);color:var(--gold);font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;border-radius:2px;background:transparent;cursor:pointer;transition:all .3s;text-decoration:none}
@@ -44,7 +52,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .eyebrow::before{content:'';display:block;width:26px;height:1px;background:var(--gold)}
 .btn-group{display:flex;gap:1rem;flex-wrap:wrap}
 
-/* ══════════ HERO ══════════ */
+/* ════════════════════════════════════════
+   HERO
+════════════════════════════════════════ */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse 80% 80% at 20% 30%,rgba(232,180,168,.3) 0%,transparent 60%),radial-gradient(ellipse 60% 60% at 80% 70%,rgba(201,169,110,.15) 0%,transparent 55%),radial-gradient(ellipse 70% 50% at 50% 100%,rgba(245,221,214,.35) 0%,transparent 60%),var(--cream)}
 .hero::before{content:'';position:absolute;width:550px;height:550px;border-radius:50%;border:1px solid rgba(201,169,110,.1);top:-130px;right:-130px;pointer-events:none}
 .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:4rem;max-width:1200px;width:100%;padding:8rem 4% 4rem}
@@ -66,7 +76,9 @@ h1.hero-title em{font-style:italic;color:var(--dusty)}
 .hero-badge-n{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--dark);line-height:1}
 .hero-badge-t{font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-align:center}
 
-/* ══════════ NEW ARRIVALS ══════════ */
+/* ════════════════════════════════════════
+   NEW ARRIVALS
+════════════════════════════════════════ */
 .arrivals-sec{padding:4rem 4%;background:linear-gradient(135deg,rgba(232,180,168,.07),rgba(201,169,110,.05))}
 .arrivals-head{text-align:center;margin-bottom:2.5rem}
 .arrivals-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1100px;margin:0 auto}
@@ -82,13 +94,13 @@ h1.hero-title em{font-style:italic;color:var(--dusty)}
 .arrival-price{font-size:.82rem;color:var(--gold)}
 .arrival-cta{text-align:center;margin-top:2rem}
 
-/* ══════════ MARQUEE ══════════ */
+/* ════════════════════════════════════════
+   MARQUEE & FEED & QUOTE & FOOTER
+════════════════════════════════════════ */
 .marquee{background:var(--gold);padding:.78rem 0;overflow:hidden;white-space:nowrap}
 .marquee-inner{display:inline-block;animation:marquee 22s linear infinite}
 .mi{display:inline-block;font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#fff;padding:0 2rem}
 .md{display:inline-block;width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.45);vertical-align:middle}
-
-/* ══════════ INSTAGRAM FEED ══════════ */
 .feed-sec{padding:5rem 4%}
 .sec-head{text-align:center;margin-bottom:2.8rem}
 .sec-ey{font-size:.63rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.85rem;display:flex;align-items:center;justify-content:center;gap:.85rem}
@@ -114,8 +126,6 @@ h1.hero-title em{font-style:italic;color:var(--dusty)}
 .p5{background:linear-gradient(145deg,#f0d0e8,#e0b0d0)}.p6{background:linear-gradient(135deg,#d0f0ec,#a8dcd8)}
 .p7{background:linear-gradient(155deg,#f8e8c8,#f0d0a0)}.p8{background:linear-gradient(125deg,#e8d0f8,#d0b0f0)}
 .p9{background:linear-gradient(145deg,#f0e8d0,#e0d0a8)}
-
-/* ══════════ QUOTE / FOOTER ══════════ */
 .quote-sec{padding:3.2rem 4%;display:flex;justify-content:center}
 .glass-card{background:var(--glass);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border:1px solid var(--gborder);border-radius:8px;padding:2.6rem 3rem;max-width:700px;width:100%;text-align:center;box-shadow:0 20px 60px var(--gshadow);position:relative;overflow:hidden}
 .glass-card::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:60%;height:1px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent)}
@@ -134,12 +144,14 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .f-icon.wa{background:rgba(37,211,102,.15)}.f-icon.ig{background:rgba(201,169,110,.15)}
 .f-lbl{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(253,246,238,.38);margin-bottom:.1rem}
 .f-val{font-size:.78rem;color:var(--cream);font-weight:300}
-.f-plain{font-size:.76rem;color:rgba(253,246,238,.52);text-decoration:none;display:block;margin-bottom:.65rem;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;text-align:left}
+.f-plain{font-size:.76rem;color:rgba(253,246,238,.52);display:block;margin-bottom:.65rem;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;text-align:left;text-decoration:none}
 .f-plain:hover{color:var(--gold)}
 .f-divider{border:none;border-top:1px solid rgba(201,169,110,.12);max-width:900px;margin:0 auto 1.3rem}
 .f-copy{text-align:center;font-size:.6rem;letter-spacing:.1em;color:rgba(253,246,238,.2)}
 
-/* ══════════ SHOP — SEARCH & SORT BAR ══════════ */
+/* ════════════════════════════════════════
+   SHOP — SEARCH, SORT, FILTERS
+════════════════════════════════════════ */
 .shop-header{padding:7rem 4% 1.5rem;text-align:center;background:linear-gradient(180deg,rgba(232,180,168,.1) 0%,transparent 100%)}
 .shop-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.6rem);font-weight:300;color:var(--dark);margin-bottom:.45rem}
 .shop-sub{font-size:.78rem;color:var(--light);letter-spacing:.06em}
@@ -157,10 +169,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .shop-wrap{max-width:1200px;margin:0 auto;padding:.5rem 4% 5rem}
 .product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.8rem}
 
-/* ══════════ PRODUCT CARD ══════════ */
+/* ════════════════════════════════════════
+   PRODUCT CARD
+════════════════════════════════════════ */
 .pc{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 20px rgba(180,120,100,.07);transition:transform .3s,box-shadow .3s;position:relative;cursor:pointer}
 .pc:hover{transform:translateY(-5px);box-shadow:0 12px 38px rgba(180,120,100,.14)}
-.pc-img{position:relative;aspect-ratio:3/4;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--blush)}
+.pc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--blush)}
 .pc-img img{width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;transition:opacity .45s ease}
 .pc-img img.img-hover{opacity:0}
 .pc:hover .pc-img img.img-main{opacity:0}
@@ -188,42 +202,49 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .empty-i{font-size:2.6rem;opacity:.3;margin-bottom:.7rem}
 .empty-t{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--mid)}
 
-/* ══════════ PRODUCT DETAIL PAGE (PDP) ══════════ */
+/* ════════════════════════════════════════
+   PRODUCT DETAIL PAGE (PDP) — MYNTRA STYLE
+════════════════════════════════════════ */
 #view-pdp{padding-top:5rem;min-height:100vh}
 .pdp-wrap{max-width:1100px;margin:0 auto;padding:2rem 4% 5rem;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:start}
-/* Left: Image gallery */
+
+/* ── ZOOM image container ── */
 .pdp-gallery{position:sticky;top:6rem}
-.pdp-main-img{border-radius:8px;overflow:hidden;aspect-ratio:3/4;background:var(--blush);position:relative;box-shadow:0 20px 60px rgba(100,60,40,.15)}
-.pdp-main-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:opacity .3s}
-.pdp-main-img .pdp-img-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:absolute;inset:0}
-.pdp-thumbs{display:flex;gap:.6rem;margin-top:.8rem;flex-wrap:wrap}
-.pdp-thumb{width:72px;height:90px;border-radius:4px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;flex-shrink:0}
+.pdp-zoom-container{border-radius:8px;overflow:hidden;aspect-ratio:3/4;background:var(--blush);position:relative;box-shadow:0 20px 60px rgba(100,60,40,.15);cursor:zoom-in}
+.pdp-zoom-container img#pdpMainImg{width:100%;height:100%;object-fit:cover;object-position:top;display:block;
+  transition:transform .12s ease,opacity .3s;transform-origin:0 0;will-change:transform}
+.pdp-zoom-container:hover img#pdpMainImg{/* JS-driven */}
+.pdp-zoom-container .pdp-img-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:absolute;inset:0;pointer-events:none}
+.zoom-hint{position:absolute;bottom:10px;right:12px;font-size:.58rem;letter-spacing:.12em;color:rgba(255,255,255,.75);background:rgba(58,46,43,.45);padding:.22rem .6rem;border-radius:3px;backdrop-filter:blur(4px);pointer-events:none;transition:opacity .3s}
+.pdp-zoom-container:hover .zoom-hint{opacity:0}
+
+/* ── Thumbnail strip ── */
+.pdp-thumbs{display:flex;gap:.55rem;margin-top:.75rem;flex-wrap:wrap}
+.pdp-thumb{width:68px;height:86px;border-radius:4px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:border-color .2s;flex-shrink:0}
 .pdp-thumb.active{border-color:var(--gold)}
 .pdp-thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
 .pdp-thumb-fallback{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:var(--blush)}
-/* Right: Details */
+
+/* ── Right info panel ── */
 .pdp-info{padding-top:.5rem}
-.pdp-breadcrumb{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--light);margin-bottom:1rem;display:flex;align-items:center;gap:.4rem}
+.pdp-breadcrumb{font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--light);margin-bottom:1rem;display:flex;align-items:center;gap:.4rem;flex-wrap:wrap}
 .pdp-breadcrumb button{background:none;border:none;cursor:pointer;color:var(--mid);font-size:.62rem;letter-spacing:.15em;font-family:'Jost',sans-serif;transition:color .2s}
 .pdp-breadcrumb button:hover{color:var(--gold)}
 .pdp-cat{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
-.pdp-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;color:var(--dark);line-height:1.2;margin-bottom:1rem}
-.pdp-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1.2rem}
+.pdp-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:300;color:var(--dark);line-height:1.2;margin-bottom:.9rem}
+.pdp-rating{display:flex;align-items:center;gap:.5rem;margin-bottom:1.1rem}
 .pdp-stars{color:var(--gold);font-size:.85rem;letter-spacing:.1rem}
 .pdp-rating-count{font-size:.72rem;color:var(--light)}
-.pdp-price-row{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid var(--gborder)}
+.pdp-price-row{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--gborder);flex-wrap:wrap}
 .pdp-price{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--dark)}
 .pdp-mrp{font-size:1rem;color:var(--light);text-decoration:line-through;font-family:'Cormorant Garamond',serif}
 .pdp-discount{font-size:.8rem;font-weight:500;color:var(--success);background:rgba(76,175,130,.1);padding:.2rem .6rem;border-radius:3px}
-/* Size selector */
 .pdp-section-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);margin-bottom:.65rem}
-.pdp-sizes{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.5rem}
+.pdp-sizes{display:flex;gap:.55rem;flex-wrap:wrap;margin-bottom:1.4rem}
 .pdp-sz{min-width:48px;height:48px;border:1.5px solid var(--gborder);border-radius:4px;background:#fff;font-family:'Jost',sans-serif;font-size:.78rem;font-weight:400;color:var(--mid);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
 .pdp-sz:hover{border-color:var(--gold);color:var(--gold)}
 .pdp-sz.active{background:var(--dark);border-color:var(--dark);color:#fff;font-weight:500}
-.pdp-sz.oos{opacity:.35;cursor:not-allowed;text-decoration:line-through}
-/* Delivery */
-.pdp-delivery{background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.18);border-radius:6px;padding:1.1rem 1.2rem;margin-bottom:1.5rem}
+.pdp-delivery{background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.18);border-radius:6px;padding:1.1rem 1.2rem;margin-bottom:1.4rem}
 .pdp-delivery-title{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
 .pdp-pin-row{display:flex;gap:.5rem}
 .pdp-pin-input{flex:1;padding:.58rem .88rem;border:1.5px solid var(--gborder);border-radius:4px;font-family:'Jost',sans-serif;font-size:.85rem;color:var(--dark);background:#fff;outline:none;transition:border-color .2s}
@@ -233,19 +254,19 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .pdp-delivery-result{font-size:.78rem;color:var(--dark);margin-top:.6rem;display:none;align-items:center;gap:.4rem}
 .pdp-delivery-result.show{display:flex}
 .pdp-delivery-icon{color:var(--success);font-size:1rem}
-/* Action buttons */
-.pdp-actions{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.5rem}
+.pdp-actions{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.4rem}
 .pdp-btn-cart{width:100%;padding:1rem;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;border:none;border-radius:4px;font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:opacity .3s,transform .2s;display:flex;align-items:center;justify-content:center;gap:.7rem}
 .pdp-btn-cart:hover:not(:disabled){opacity:.9;transform:translateY(-1px)}
 .pdp-btn-cart:disabled{background:#ccc;cursor:not-allowed;transform:none}
 .pdp-btn-wish{width:100%;padding:.9rem;border:1.5px solid var(--gborder);background:#fff;color:var(--mid);border-radius:4px;font-family:'Jost',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center;gap:.6rem}
 .pdp-btn-wish:hover{border-color:var(--dusty);color:var(--dusty)}
-/* Product highlights */
 .pdp-highlights{border-top:1px solid var(--gborder);padding-top:1.2rem}
 .pdp-highlight-item{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.7rem;font-size:.78rem;color:var(--mid);line-height:1.5}
 .pdp-highlight-icon{color:var(--gold);flex-shrink:0;margin-top:.1rem}
 
-/* ══════════ CART ══════════ */
+/* ════════════════════════════════════════
+   CART
+════════════════════════════════════════ */
 .cart-wrap{max-width:1100px;margin:0 auto;padding:7rem 4% 4rem;display:grid;grid-template-columns:1fr 380px;gap:2.8rem;align-items:start}
 .cart-title{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--dark);margin-bottom:1.3rem}
 .cart-items{display:flex;flex-direction:column;gap:.85rem}
@@ -267,14 +288,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .cart-empty{text-align:center;padding:3.5rem 1.5rem;background:#fff;border-radius:8px;box-shadow:0 2px 20px rgba(180,120,100,.06)}
 .cart-empty-i{font-size:2.6rem;margin-bottom:.85rem}
 .cart-empty-t{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--mid);margin-bottom:1.2rem}
-/* Order summary */
 .order-sum{background:#fff;border-radius:8px;padding:1.6rem;box-shadow:0 4px 24px rgba(180,120,100,.08);position:sticky;top:7rem}
 .sum-row{display:flex;justify-content:space-between;padding:.52rem 0;border-bottom:1px solid rgba(201,169,110,.1);font-size:.8rem;color:var(--mid)}
 .sum-total{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0 0;margin-top:.38rem;border-top:2px solid var(--gold-light)}
 .sum-tlbl{font-family:'Cormorant Garamond',serif;font-size:1.08rem;color:var(--dark)}
 .sum-tprice{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--dark)}
 .savings-box{background:rgba(76,175,130,.08);border:1px solid rgba(76,175,130,.2);border-radius:4px;padding:.42rem .72rem;font-size:.68rem;color:var(--success);text-align:center;margin:.7rem 0}
-/* Forms */
 .cust-form{margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid var(--gborder)}
 .form-t{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.85rem}
 .fg{margin-bottom:.7rem}
@@ -282,30 +301,66 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .fi{width:100%;padding:.6rem .82rem;border:1px solid var(--gborder);border-radius:3px;font-family:'Jost',sans-serif;font-size:.82rem;color:var(--dark);background:var(--cream);transition:border-color .2s;outline:none}
 .fi:focus{border-color:var(--gold)}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:.62rem}
-/* UPI section */
-.upi-sec{margin-top:1.3rem;padding-top:1.3rem;border-top:1px solid var(--gborder);display:none}
-.upi-id-box{background:rgba(201,169,110,.08);border:1px dashed var(--gold);border-radius:4px;padding:.72rem;text-align:center;margin-bottom:.85rem}
-.upi-id-lbl{font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--light);margin-bottom:.22rem}
-.upi-id-val{font-size:.92rem;font-weight:500;color:var(--dark);letter-spacing:.05em}
-.upi-copy{font-size:.56rem;color:var(--gold);cursor:pointer;text-decoration:underline;margin-top:.22rem;display:block}
-.qr-box{text-align:center;padding:.85rem;background:var(--cream);border-radius:6px;border:1px solid var(--gborder);margin-bottom:.85rem}
-.qr-inner{width:130px;height:130px;margin:0 auto .55rem;background:#fff;border:1px solid var(--gborder);border-radius:4px;display:flex;align-items:center;justify-content:center;padding:7px}
-.qr-lbl{font-size:.58rem;letter-spacing:.1em;color:var(--light)}
-.qr-amt{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--gold);margin-top:.22rem}
-/* UPI app buttons */
-.upi-app-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.5rem;margin-bottom:.85rem}
-.upi-app-btn{display:flex;align-items:center;justify-content:center;gap:.5rem;padding:.72rem .5rem;border:1.5px solid var(--gborder);border-radius:6px;background:#fff;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.08em;color:var(--mid);cursor:pointer;transition:all .22s;text-decoration:none}
-.upi-app-btn:hover{border-color:var(--gold);color:var(--dark);box-shadow:0 4px 14px rgba(201,169,110,.15)}
-.upi-app-btn .app-icon{font-size:1.2rem}
-.pay-note{font-size:.6rem;color:var(--light);text-align:center;line-height:1.6;margin-top:.38rem}
 .btn-checkout{width:100%;padding:.92rem;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;border:none;border-radius:4px;font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:opacity .3s,transform .2s;margin-top:.85rem;display:flex;align-items:center;justify-content:center;gap:.65rem}
 .btn-checkout:hover{opacity:.9;transform:translateY(-1px)}
 
-/* ══════════ ADMIN PANEL ══════════ */
-.admin-fab{position:fixed;bottom:2rem;right:2rem;z-index:400;background:var(--dark);color:var(--gold);border:none;border-radius:50%;width:50px;height:50px;font-size:1.15rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s;display:none}
-.admin-fab.visible{display:flex;align-items:center;justify-content:center}
+/* ════════════════════════════════════════
+   PAYMENT LANDING PAGE  ← NEW VIEW
+════════════════════════════════════════ */
+#view-payment{padding-top:5rem;min-height:100vh;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(232,180,168,.22) 0%,transparent 65%),var(--cream)}
+.pay-page-wrap{max-width:980px;margin:0 auto;padding:2.5rem 4% 5rem}
+.pay-page-header{text-align:center;margin-bottom:2.5rem}
+.pay-page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--dark);margin-bottom:.5rem}
+.pay-page-sub{font-size:.82rem;color:var(--mid)}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start}
+
+/* Left: QR + UPI ID */
+.pay-qr-panel{background:#fff;border-radius:10px;padding:2rem;box-shadow:0 6px 30px rgba(180,120,100,.1);text-align:center}
+.pay-qr-label{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+/* QR image — replace with your own QR code image URL */
+.pay-qr-img-wrap{width:200px;height:200px;margin:0 auto 1.2rem;border-radius:8px;overflow:hidden;border:2px solid var(--gborder);background:#fff;display:flex;align-items:center;justify-content:center;position:relative}
+.pay-qr-img-wrap img{width:100%;height:100%;object-fit:contain}
+.pay-qr-fallback{display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--light)}
+.pay-qr-fallback .qr-grid-vis{display:grid;grid-template-columns:repeat(9,1fr);gap:2px;width:100px;height:100px;margin-bottom:.3rem}
+.pay-amount-chip{display:inline-block;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:600;padding:.45rem 1.5rem;border-radius:4px;margin-bottom:1rem;letter-spacing:.05em}
+.pay-upi-display{background:rgba(201,169,110,.08);border:1px dashed var(--gold);border-radius:6px;padding:.8rem 1rem;margin-bottom:.8rem}
+.pay-upi-id-label{font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:.25rem}
+.pay-upi-id-val{font-size:.95rem;font-weight:500;color:var(--dark);letter-spacing:.05em}
+.pay-copy-btn{font-size:.6rem;color:var(--gold);cursor:pointer;text-decoration:underline;display:block;margin-top:.25rem;background:none;border:none;font-family:'Jost',sans-serif}
+
+/* Right: custom UPI + app buttons */
+.pay-action-panel{background:#fff;border-radius:10px;padding:2rem;box-shadow:0 6px 30px rgba(180,120,100,.1)}
+.pay-section-lbl{font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
+.pay-custom-upi-row{display:flex;gap:.5rem;margin-bottom:1.4rem}
+.pay-custom-upi-input{flex:1;padding:.68rem .9rem;border:1.5px solid var(--gborder);border-radius:4px;font-family:'Jost',sans-serif;font-size:.85rem;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s}
+.pay-custom-upi-input:focus{border-color:var(--gold)}
+.pay-custom-upi-btn{padding:.68rem 1.1rem;background:var(--gold);color:#fff;border:none;border-radius:4px;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.12em;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+.pay-custom-upi-btn:hover{opacity:.85}
+.pay-apps-label{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mid);margin-bottom:.8rem}
+.pay-app-buttons{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.4rem}
+.pay-app-btn{display:flex;align-items:center;gap:1rem;padding:.9rem 1.2rem;border:1.5px solid var(--gborder);border-radius:8px;background:#fff;cursor:pointer;transition:all .22s;text-decoration:none;font-family:'Jost',sans-serif}
+.pay-app-btn:hover{border-color:var(--gold);box-shadow:0 4px 16px rgba(201,169,110,.18);transform:translateX(3px)}
+.pay-app-icon{font-size:1.5rem;flex-shrink:0;width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.pay-app-icon.gpay{background:linear-gradient(135deg,#4285f4,#34a853)}
+.pay-app-icon.phonepe{background:linear-gradient(135deg,#5f259f,#8b4fc8)}
+.pay-app-icon.paytm{background:linear-gradient(135deg,#002970,#00b9f1)}
+.pay-app-icon.bhim{background:linear-gradient(135deg,#005f32,#2e8b57)}
+.pay-app-name{font-size:.82rem;font-weight:500;color:var(--dark)}
+.pay-app-sub{font-size:.62rem;color:var(--light);margin-top:.1rem}
+.pay-app-arrow{margin-left:auto;color:var(--gold);font-size:.9rem}
+.pay-note-box{background:rgba(201,169,110,.06);border:1px solid rgba(201,169,110,.18);border-radius:6px;padding:.9rem 1rem;font-size:.74rem;color:var(--mid);line-height:1.65;margin-bottom:1.2rem}
+.pay-confirm-btn{width:100%;padding:1rem;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;border:none;border-radius:4px;font-family:'Jost',sans-serif;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:opacity .3s,transform .2s;display:flex;align-items:center;justify-content:center;gap:.7rem;box-shadow:0 8px 26px rgba(201,169,110,.35)}
+.pay-confirm-btn:hover{opacity:.9;transform:translateY(-1px)}
+.pay-back-btn{display:flex;align-items:center;gap:.5rem;background:none;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);margin-bottom:1.8rem;transition:color .2s}
+.pay-back-btn:hover{color:var(--gold)}
+
+/* ════════════════════════════════════════
+   ADMIN PANEL
+════════════════════════════════════════ */
+.admin-fab{position:fixed;bottom:2rem;right:2rem;z-index:400;background:var(--dark);color:var(--gold);border:none;border-radius:50%;width:50px;height:50px;font-size:1.15rem;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.25);transition:transform .2s,box-shadow .2s;display:none;align-items:center;justify-content:center}
+.admin-fab.visible{display:flex}
 .admin-fab:hover{transform:scale(1.1)}
-.admin-panel{position:fixed;right:0;top:0;bottom:0;width:min(480px,100vw);background:#fff;box-shadow:-6px 0 48px rgba(0,0,0,.14);z-index:500;transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);overflow-y:auto}
+.admin-panel{position:fixed;right:0;top:0;bottom:0;width:min(500px,100vw);background:#fff;box-shadow:-6px 0 48px rgba(0,0,0,.14);z-index:500;transform:translateX(100%);transition:transform .4s cubic-bezier(.23,1,.32,1);overflow-y:auto}
 .admin-panel.open{transform:translateX(0)}
 .admin-hd{padding:1.6rem 1.8rem;border-bottom:1px solid var(--gborder);display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:#fff;z-index:10}
 .admin-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;color:var(--dark)}
@@ -317,7 +372,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .admin-fi{width:100%;padding:.65rem .88rem;border:1px solid var(--gborder);border-radius:3px;font-family:'Jost',sans-serif;font-size:.83rem;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s}
 .admin-fi:focus{border-color:var(--gold)}
 .admin-frow{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
-/* Image upload */
+/* Image widget */
 .img-widget{border:2px dashed var(--gborder);border-radius:6px;overflow:hidden;background:var(--cream);transition:border-color .25s;cursor:pointer;position:relative}
 .img-widget:hover{border-color:var(--gold)}
 .img-widget.has-img{border-style:solid;border-color:var(--gold-light)}
@@ -334,17 +389,16 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .img-empty-title{font-size:.72rem;color:var(--mid)}
 .img-empty-sub{font-size:.62rem;color:var(--light);line-height:1.5}
 .img-file-input{display:none}
-.img-url-row{display:flex;gap:.5rem;margin-top:.55rem}
-.img-url-input{flex:1;padding:.6rem .82rem;border:1px solid var(--gborder);border-radius:3px;font-family:'Jost',sans-serif;font-size:.78rem;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s}
-.img-url-input:focus{border-color:var(--gold)}
-.img-url-btn{padding:.6rem 1rem;background:var(--gold);color:#fff;border:none;border-radius:3px;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.1em;cursor:pointer;white-space:nowrap;transition:opacity .2s}
-.img-url-btn:hover{opacity:.85}
-/* Second image for hover */
-.img2-url-row{display:flex;gap:.5rem;margin-top:.4rem}
-.img2-url-input{flex:1;padding:.58rem .82rem;border:1px solid var(--gborder);border-radius:3px;font-family:'Jost',sans-serif;font-size:.78rem;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s}
-.img2-url-input:focus{border-color:var(--gold)}
-.img2-url-label{font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-top:.6rem;margin-bottom:.3rem;display:block}
-/* Inventory / out of stock toggle */
+/* Multi-image URL inputs */
+.multi-img-list{display:flex;flex-direction:column;gap:.5rem;margin-top:.5rem}
+.multi-img-row{display:flex;gap:.4rem;align-items:center}
+.multi-img-row input{flex:1;padding:.55rem .8rem;border:1px solid var(--gborder);border-radius:3px;font-family:'Jost',sans-serif;font-size:.78rem;color:var(--dark);background:var(--cream);outline:none;transition:border-color .2s}
+.multi-img-row input:focus{border-color:var(--gold)}
+.multi-img-row button{width:26px;height:26px;border:1px solid var(--gborder);border-radius:3px;background:none;cursor:pointer;font-size:.75rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;color:var(--danger)}
+.multi-img-row button:hover{background:#fee;border-color:#e88}
+.add-img-url-btn{width:100%;margin-top:.4rem;padding:.45rem;background:none;border:1px dashed var(--gborder);border-radius:3px;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.12em;color:var(--mid);cursor:pointer;transition:all .2s}
+.add-img-url-btn:hover{border-color:var(--gold);color:var(--gold)}
+/* OOS toggle */
 .oos-toggle-row{display:flex;align-items:center;gap:.8rem;padding:.7rem .9rem;background:rgba(200,80,80,.04);border:1px solid rgba(200,80,80,.12);border-radius:4px;margin-bottom:.9rem}
 .oos-toggle-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--danger);cursor:pointer;flex-shrink:0}
 .oos-toggle-row label{font-size:.75rem;color:var(--danger);cursor:pointer;letter-spacing:.05em}
@@ -356,14 +410,17 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .api-thumb img{width:100%;height:100%;object-fit:cover;object-position:top}
 .api-info{flex:1;min-width:0}
 .api-name{font-size:.82rem;font-weight:400;color:var(--dark);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.api-meta{font-size:.7rem;color:var(--gold);margin-top:.12rem;display:flex;align-items:center;gap:.5rem}
-.api-oos-tag{font-size:.58rem;background:rgba(200,80,80,.1);color:var(--danger);padding:.1rem .4rem;border-radius:2px;letter-spacing:.08em}
+.api-meta{font-size:.7rem;color:var(--gold);margin-top:.12rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.api-oos-tag{font-size:.58rem;background:rgba(200,80,80,.1);color:var(--danger);padding:.1rem .4rem;border-radius:2px}
+.api-img-count{font-size:.58rem;color:var(--light)}
 .api-acts{display:flex;gap:.42rem;flex-shrink:0}
 .icon-btn{background:none;border:1px solid var(--gborder);border-radius:3px;width:28px;height:28px;cursor:pointer;font-size:.72rem;display:flex;align-items:center;justify-content:center;transition:all .2s}
 .icon-btn.del:hover{background:#fee;border-color:#e88}
 .icon-btn.edit:hover{background:rgba(201,169,110,.1);border-color:var(--gold)}
 
-/* ══════════ MODAL ══════════ */
+/* ════════════════════════════════════════
+   SUCCESS MODAL
+════════════════════════════════════════ */
 .modal-bg{position:fixed;inset:0;background:rgba(58,46,43,.55);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:1.5rem}
 .modal-bg.show{display:flex}
 .modal{background:#fff;border-radius:12px;padding:2.3rem 1.9rem;max-width:390px;width:100%;text-align:center;animation:popUp .4s cubic-bezier(.23,1,.32,1)}
@@ -375,23 +432,29 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .modal-cont{background:none;border:1px solid var(--gborder);color:var(--mid);border-radius:4px;padding:.7rem;font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;width:100%;transition:all .2s}
 .modal-cont:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ══════════ TOAST ══════════ */
+/* ════════════════════════════════════════
+   TOAST
+════════════════════════════════════════ */
 .toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(110px);background:var(--dark);color:#fff;padding:.72rem 1.6rem;border-radius:4px;font-size:.74rem;letter-spacing:.07em;z-index:2000;transition:transform .35s cubic-bezier(.23,1,.32,1);pointer-events:none;white-space:nowrap}
 .toast.show{transform:translateX(-50%) translateY(0)}
 
-/* ══════════ ANIMATIONS ══════════ */
+/* ════════════════════════════════════════
+   ANIMATIONS & REVEAL
+════════════════════════════════════════ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes popUp{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ══════════ RESPONSIVE ══════════ */
+/* ════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════ */
 @media(max-width:900px){
   .cart-wrap{grid-template-columns:1fr}.order-sum{position:static}
   .arrivals-grid{grid-template-columns:repeat(2,1fr)}
-  .pdp-wrap{grid-template-columns:1fr;gap:2rem}
-  .pdp-gallery{position:static}
+  .pdp-wrap{grid-template-columns:1fr;gap:2rem}.pdp-gallery{position:static}
+  .pay-grid{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .nav-links{display:none}
@@ -401,8 +464,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   .btn-group{justify-content:center}
   .footer-inner{grid-template-columns:1fr;gap:1.8rem;text-align:center}
   .f-link{justify-content:center}.f-plain{text-align:center}
-  .frow{grid-template-columns:1fr}
-  .arrivals-grid{grid-template-columns:repeat(2,1fr)}
+  .frow{grid-template-columns:1fr}.arrivals-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:580px){.product-grid{grid-template-columns:repeat(2,1fr);gap:1rem}.feed-grid{gap:5px}.admin-frow{grid-template-columns:1fr}}
 @media(max-width:360px){.product-grid{grid-template-columns:1fr}}
@@ -422,9 +484,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <button class="nav-cart-btn" onclick="goTo('cart')">🛍 Cart <span class="cart-badge" id="cartBadge">0</span></button>
 </nav>
 
-<!-- ════════════════════════════════════════
-     HOME
-════════════════════════════════════════ -->
+<!-- ════════════════ HOME ════════════════ -->
 <div class="view active" id="view-home">
   <section class="hero">
     <div class="hero-inner">
@@ -440,7 +500,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div class="hero-visual">
         <div class="hero-card">
           <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80" alt="New Arrival"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
           <div style="display:none;flex-direction:column;align-items:center;justify-content:center;gap:1rem;height:100%;background:linear-gradient(145deg,#f0d8d0,#e8c4b8)">
             <div style="width:66px;height:66px;border:2px dashed rgba(201,169,110,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.8rem">👗</div>
             <p style="font-family:'Cormorant Garamond',serif;font-size:.88rem;letter-spacing:.12em;color:rgba(120,80,65,.6);font-style:italic">New Arrivals</p>
@@ -488,8 +548,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p1" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🌸</span><p class="pi-lb">Blush Co-ord</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Blush Co-ord</span></div></a>
       <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1617922001439-4a2e6562f328?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p2" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🌿</span><p class="pi-lb">Sage Kurta</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Sage Linen</span></div></a>
       <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p3" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">💜</span><p class="pi-lb">Lavender Suit</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Lavender Suit</span></div></a>
-      <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p4" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🌼</span><p class="pi-lb">Buttercup Dress</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Buttercup</span></div></a>
-      <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p5" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🌷</span><p class="pi-lb">Rose Organza</p></div></div><div class="post-ov"><span class="ov-icon">🌷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">The Pastel Story</span></div></a>
+      <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p4" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🌼</span><p class="pi-lb">Buttercup</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Buttercup</span></div></a>
+      <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p5" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🌷</span><p class="pi-lb">Rose Organza</p></div></div><div class="post-ov"><span class="ov-icon">🌷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Pastel Story</span></div></a>
       <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p6" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🩵</span><p class="pi-lb">Mint Chiffon</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Mint Chiffon</span></div></a>
       <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p7" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🍑</span><p class="pi-lb">Peach Palazzo</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Peach Palazzo</span></div></a>
       <a href="https://www.instagram.com/pastelstory_by_shiwani" target="_blank" class="feed-post"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=400&q=75" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/><div class="post-bg-fallback p8" style="display:none"><div class="pi"><div class="pi-ac"></div><span class="pi-em">🪻</span><p class="pi-lb">Lilac Sharara</p></div></div><div class="post-ov"><span class="ov-icon">📷</span><span class="ov-txt">View on Instagram</span><span class="ov-tag">Lilac Sharara</span></div></a>
@@ -525,28 +585,21 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   </footer>
 </div>
 
-<!-- ════════════════════════════════════════
-     SHOP
-════════════════════════════════════════ -->
+<!-- ════════════════ SHOP ════════════════ -->
 <div class="view" id="view-shop">
   <div class="shop-header">
     <p class="eyebrow" style="justify-content:center">The Collection</p>
     <h1 class="shop-title">Shop All Pieces</h1>
     <p class="shop-sub">Curated pastels for every chapter of your story</p>
   </div>
-  <!-- Search + Sort -->
   <div class="shop-controls">
-    <div class="shop-search">
-      <span class="shop-search-icon">🔍</span>
-      <input type="text" id="shopSearch" placeholder="Search styles…" oninput="renderShop()"/>
-    </div>
+    <div class="shop-search"><span class="shop-search-icon">🔍</span><input type="text" id="shopSearch" placeholder="Search styles…" oninput="renderShop()"/></div>
     <select class="shop-sort" id="shopSort" onchange="renderShop()">
       <option value="">Sort by</option>
       <option value="low">Price: Low to High</option>
       <option value="high">Price: High to Low</option>
     </select>
   </div>
-  <!-- Category filters -->
   <div class="filters" id="filterBar">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="kurta">Kurtas</button>
@@ -558,16 +611,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   <div class="shop-wrap"><div class="product-grid" id="productGrid"></div></div>
 </div>
 
-<!-- ════════════════════════════════════════
-     PRODUCT DETAIL PAGE
-════════════════════════════════════════ -->
+<!-- ════════════════ PDP ════════════════ -->
 <div class="view" id="view-pdp">
-  <div class="pdp-wrap" id="pdpWrap"><!-- Rendered by JS --></div>
+  <div class="pdp-wrap" id="pdpWrap"></div>
 </div>
 
-<!-- ════════════════════════════════════════
-     CART
-════════════════════════════════════════ -->
+<!-- ════════════════ CART ════════════════ -->
 <div class="view" id="view-cart">
   <div class="cart-wrap">
     <div>
@@ -590,29 +639,88 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
         </div>
         <div class="fg"><label class="fl">Delivery Address *</label><input class="fi" id="custAddr" placeholder="House, Street, City" type="text"/></div>
       </div>
-      <!-- UPI Payment -->
-      <div class="upi-sec" id="upiSection">
-        <p class="form-t" style="margin-bottom:.6rem">Pay via UPI</p>
-        <div class="upi-id-box">
-          <p class="upi-id-lbl">UPI ID</p>
-          <p class="upi-id-val" id="upiIdTxt">shiwani@upi</p>
-          <span class="upi-copy" onclick="copyUPI()">📋 Tap to copy</span>
-        </div>
-        <div class="qr-box">
-          <div class="qr-inner" id="qrInner"></div>
-          <p class="qr-lbl">Scan QR to pay</p>
-          <p class="qr-amt" id="qrAmt">₹0</p>
-        </div>
-        <!-- UPI Deep Link App Buttons -->
-        <div class="upi-app-grid" id="upiAppGrid"><!-- filled by JS --></div>
-        <p class="pay-note">Tap your preferred app above — it will open automatically on mobile.<br>After paying, tap <strong>Confirm Order</strong> below.</p>
-      </div>
-      <button class="btn-checkout" onclick="handleCheckout()"><span id="btnIcon">💳</span>&nbsp;<span id="btnTxt">Proceed to Pay</span></button>
+      <button class="btn-checkout" onclick="proceedToPayment()">💳 Proceed to Pay</button>
     </div>
   </div>
 </div>
 
-<!-- ══ ADMIN FAB (hidden unless ?admin=true) ══ -->
+<!-- ════════════════ PAYMENT PAGE ════════════════ -->
+<div class="view" id="view-payment">
+  <div class="pay-page-wrap">
+    <button class="pay-back-btn" onclick="goTo('cart')">← Back to Cart</button>
+    <div class="pay-page-header">
+      <p class="eyebrow" style="justify-content:center">Secure Checkout</p>
+      <h1 class="pay-page-title">Complete Your Payment</h1>
+      <p class="pay-page-sub">Scan the QR code or open your UPI app to pay instantly</p>
+    </div>
+    <div class="pay-grid">
+      <!-- Left: QR panel -->
+      <div class="pay-qr-panel">
+        <p class="pay-qr-label">Scan &amp; Pay</p>
+        <!--
+          ★ REPLACE the src below with your own UPI QR code image URL.
+          Generate your QR from: https://upiqr.in or your bank's app.
+          Example: src="https://yoursite.com/qr.png"
+        -->
+        <div class="pay-qr-img-wrap" id="payQrImgWrap">
+          <img id="payQrImg" src="" alt="UPI QR Code"
+            onerror="this.style.display='none';document.getElementById('payQrFallback').style.display='flex'"/>
+          <div id="payQrFallback" class="pay-qr-fallback">
+            <div class="qr-grid-vis" id="qrGridVis"></div>
+            <p style="font-size:.65rem;color:var(--light);letter-spacing:.1em">Your QR Code</p>
+          </div>
+        </div>
+        <div class="pay-amount-chip" id="payAmountChip">₹0</div>
+        <div class="pay-upi-display">
+          <p class="pay-upi-id-label">Pay to UPI ID</p>
+          <p class="pay-upi-id-val" id="payUpiIdDisplay">shiwani@upi</p>
+          <button class="pay-copy-btn" onclick="copyUPI()">📋 Tap to copy UPI ID</button>
+        </div>
+        <p style="font-size:.68rem;color:var(--light);line-height:1.6;text-align:center">Open any UPI app →<br>Scan QR or enter UPI ID →<br>Enter ₹<span id="payAmtInline">0</span> → Pay</p>
+      </div>
+
+      <!-- Right: App buttons panel -->
+      <div class="pay-action-panel">
+        <p class="pay-section-lbl">Enter Your UPI ID (optional)</p>
+        <div class="pay-custom-upi-row">
+          <input class="pay-custom-upi-input" id="customUpiInput" type="text" placeholder="yourname@upi or phone@paytm"/>
+          <button class="pay-custom-upi-btn" onclick="useCustomUPI()">Use This</button>
+        </div>
+        <p class="pay-apps-label">Or open your payment app directly</p>
+        <div class="pay-app-buttons">
+          <a class="pay-app-btn" id="gpayBtn" href="#" onclick="return handleAppPay('gpay')">
+            <div class="pay-app-icon gpay" style="color:#fff;font-size:1rem;font-weight:700">G</div>
+            <div><div class="pay-app-name">Google Pay</div><div class="pay-app-sub">Opens GPay on your phone</div></div>
+            <span class="pay-app-arrow">→</span>
+          </a>
+          <a class="pay-app-btn" id="phonepeBtn" href="#" onclick="return handleAppPay('phonepe')">
+            <div class="pay-app-icon phonepe" style="color:#fff;font-size:1rem">Ρ</div>
+            <div><div class="pay-app-name">PhonePe</div><div class="pay-app-sub">Opens PhonePe on your phone</div></div>
+            <span class="pay-app-arrow">→</span>
+          </a>
+          <a class="pay-app-btn" id="paytmBtn" href="#" onclick="return handleAppPay('paytm')">
+            <div class="pay-app-icon paytm" style="color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.05em">PAY</div>
+            <div><div class="pay-app-name">Paytm</div><div class="pay-app-sub">Opens Paytm on your phone</div></div>
+            <span class="pay-app-arrow">→</span>
+          </a>
+          <a class="pay-app-btn" id="bhimBtn" href="#" onclick="return handleAppPay('bhim')">
+            <div class="pay-app-icon bhim" style="color:#fff;font-size:.7rem;font-weight:700">BHIM</div>
+            <div><div class="pay-app-name">BHIM / Other UPI</div><div class="pay-app-sub">Opens any UPI-compatible app</div></div>
+            <span class="pay-app-arrow">→</span>
+          </a>
+        </div>
+        <div class="pay-note-box">
+          📱 <strong>On mobile:</strong> Tapping an app button will open it directly.<br>
+          💻 <strong>On desktop:</strong> Scan the QR code from your phone or copy the UPI ID.<br>
+          ✅ After payment, tap <strong>Confirm Order</strong> below.
+        </div>
+        <button class="pay-confirm-btn" onclick="confirmOrder()">✅ &nbsp;Confirm Order — I've Paid</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ ADMIN FAB ══ -->
 <button class="admin-fab" id="adminFab" onclick="toggleAdmin()" title="Manage Products">⚙</button>
 
 <!-- ══ ADMIN PANEL ══ -->
@@ -622,12 +730,12 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     <button class="admin-x" onclick="toggleAdmin()">✕</button>
   </div>
   <div class="admin-bd">
-    <p class="a-sec">Product Image</p>
+    <p class="a-sec">Main Product Image</p>
     <div class="img-widget" id="imgWidget">
       <div class="img-empty" id="imgEmpty" onclick="document.getElementById('imgFileInput').click()">
         <div class="img-empty-icon">🖼</div>
-        <div class="img-empty-title">Upload Product Photo</div>
-        <div class="img-empty-sub">Click to choose from your device,<br>or paste a URL below</div>
+        <div class="img-empty-title">Upload Main Photo</div>
+        <div class="img-empty-sub">Click to choose from device,<br>or use a URL below</div>
       </div>
       <div class="img-preview-wrap" id="imgPreviewWrap">
         <img id="imgPreviewEl" alt="Preview"/>
@@ -638,14 +746,14 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       </div>
     </div>
     <input type="file" accept="image/*" id="imgFileInput" class="img-file-input" onchange="handleFileUpload(this)"/>
-    <div class="img-url-row">
-      <input class="img-url-input" id="imgUrlInput" type="url" placeholder="Or paste main image URL…"/>
-      <button class="img-url-btn" onclick="loadFromUrl()">Load</button>
+    <div style="display:flex;gap:.4rem;margin-top:.5rem">
+      <input class="admin-fi" id="mainImgUrlInput" type="url" placeholder="Or paste main image URL…" style="font-size:.76rem"/>
+      <button onclick="loadMainImgFromUrl()" style="padding:.6rem .9rem;background:var(--gold);color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:.65rem;white-space:nowrap;font-family:'Jost',sans-serif">Load</button>
     </div>
-    <span class="img2-url-label">Hover Image URL (optional — swaps on card hover)</span>
-    <div class="img2-url-row">
-      <input class="img2-url-input" id="img2UrlInput" type="url" placeholder="https://… second image URL"/>
-    </div>
+
+    <p class="a-sec">Additional Images (Gallery / Hover)</p>
+    <div class="multi-img-list" id="multiImgList"><!-- rows added by JS --></div>
+    <button class="add-img-url-btn" onclick="addImgUrlRow()">+ Add Another Image URL</button>
 
     <p class="a-sec">Product Details</p>
     <div class="admin-fg"><label class="admin-fl">Product Name *</label><input class="admin-fi" id="pName" placeholder="e.g. Blush Rose Co-ord Set" type="text"/></div>
@@ -655,8 +763,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
       <div class="admin-fg"><label class="admin-fl">Original Price (₹)</label><input class="admin-fi" id="pOldPrice" placeholder="1799" type="number"/></div>
     </div>
     <div class="admin-frow">
-      <div class="admin-fg">
-        <label class="admin-fl">Category *</label>
+      <div class="admin-fg"><label class="admin-fl">Category *</label>
         <select class="admin-fi" id="pCat">
           <option value="kurta">Kurta</option><option value="coord">Co-ord Set</option>
           <option value="dress">Dress</option><option value="suit">Suit Set</option><option value="sharara">Sharara</option>
@@ -666,8 +773,7 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     </div>
     <div class="admin-fg"><label class="admin-fl">Sizes (comma-separated)</label><input class="admin-fi" id="pSizes" placeholder="S, M, L, XL" type="text"/></div>
     <div class="admin-frow">
-      <div class="admin-fg">
-        <label class="admin-fl">Color Theme</label>
+      <div class="admin-fg"><label class="admin-fl">Color Theme</label>
         <select class="admin-fi" id="pColor">
           <option value="blush">Blush Pink</option><option value="sage">Sage Green</option>
           <option value="lavender">Lavender</option><option value="peach">Peach</option>
@@ -675,22 +781,18 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
           <option value="ivory">Ivory</option><option value="butter">Butter Yellow</option>
         </select>
       </div>
-      <div class="admin-fg">
-        <label class="admin-fl">Badge</label>
+      <div class="admin-fg"><label class="admin-fl">Badge</label>
         <select class="admin-fi" id="pBadge">
           <option value="">None</option><option value="New">New</option>
           <option value="Best Seller">Best Seller</option><option value="Sale">Sale</option><option value="Limited">Limited</option>
         </select>
       </div>
     </div>
-    <!-- OUT OF STOCK TOGGLE -->
     <div class="oos-toggle-row">
       <input type="checkbox" id="pOos"/>
-      <label for="pOos">Mark as Out of Stock — disables "Add to Cart" and shows Sold Out badge</label>
+      <label for="pOos">Mark as Out of Stock — disables Add to Cart &amp; shows Sold Out badge</label>
     </div>
-
     <button class="btn-save" id="saveBtn" onclick="saveProduct()">✦ Add Product to Shop</button>
-
     <p class="a-sec">All Products (<span id="prodCount">0</span>)</p>
     <div id="adminList"></div>
   </div>
@@ -710,16 +812,65 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 
 <div class="toast" id="toast"></div>
 
-<!-- ════════════════════════════════════════════════════
+<!-- ════════════════════════════════════════════════
      JAVASCRIPT
-════════════════════════════════════════════════════ -->
+════════════════════════════════════════════════ -->
 <script>
-/* ══ CONFIG ══ */
-const UPI_ID   = 'shiwani@upi';
-const WHATSAPP = '918444929090';
-const SHOP     = 'The Pastel Story';
+/* ══════════════════════════════════════
+   CONFIG
+══════════════════════════════════════ */
+const UPI_ID   = 'shiwani@upi';   // ← Replace with your real UPI ID
+const WHATSAPP = '918444929090';   // ← Your WhatsApp with country code
 
-/* ══ COLOUR GRADIENTS ══ */
+/*
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  GOOGLE SHEETS ORDER TRACKING SETUP
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  1. Go to: https://sheets.google.com → create a new spreadsheet
+  2. Name columns: Timestamp | OrderID | Name | Phone | Address | Items | Total
+  3. Open Extensions → Apps Script → paste this code:
+  ─────────────────────────────────────
+  function doPost(e) {
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+    const data  = JSON.parse(e.postData.contents);
+    sheet.appendRow([
+      new Date(), data.orderId, data.name, data.phone,
+      data.address, data.items, data.total
+    ]);
+    return ContentService.createTextOutput('OK');
+  }
+  ─────────────────────────────────────
+  4. Deploy → New Deployment → Web App
+     → Execute as: Me, Who has access: Anyone → Deploy
+  5. Copy the deployment URL and paste it below:
+*/
+const SHEETS_URL = ''; // ← Paste your Apps Script Web App URL here
+
+async function sendToSheets(orderData) {
+  if (!SHEETS_URL) return; // skip if not configured
+  try {
+    await fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors', // Google Apps Script requires no-cors
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(orderData)
+    });
+  } catch(e) { console.warn('Sheets sync failed:', e); }
+}
+
+/*
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  QR CODE IMAGE
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Replace the empty string below with your real QR code image URL.
+  Generate it at https://upiqr.in — select UPI and enter: shiwani@upi
+  Then host it or use a direct link.
+*/
+const QR_IMAGE_URL = ''; // ← e.g. 'https://yoursite.com/upi-qr.png'
+
+/* ══════════════════════════════════════
+   COLOUR GRADIENTS & CATEGORY LABELS
+══════════════════════════════════════ */
 const GRAD = {
   blush:'linear-gradient(145deg,#f5d5c8,#e8b0a0)',sage:'linear-gradient(135deg,#d8e8d0,#c0d8b8)',
   lavender:'linear-gradient(155deg,#d0d4f0,#b8bce8)',peach:'linear-gradient(125deg,#f5e8d0,#e8d0a8)',
@@ -728,149 +879,264 @@ const GRAD = {
 };
 const CAT_LABEL = {kurta:'Kurta',coord:'Co-ord Set',dress:'Dress',suit:'Suit Set',sharara:'Sharara'};
 
-/* ══ DEFAULT PRODUCTS (img2 used for hover swap) ══ */
+/* ══════════════════════════════════════
+   DEFAULT PRODUCTS — imgs[] holds all images
+══════════════════════════════════════ */
 const DEFAULT_PRODUCTS = [
-  {id:1,name:'Blush Rose Co-ord Set',desc:'Elegant matching top & palazzo in soft blush cotton',price:1499,oldPrice:1999,category:'coord',emoji:'🌸',sizes:['S','M','L','XL'],color:'blush',badge:'Best Seller',img:'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=500&q=80',img2:'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=500&q=80',oos:false},
-  {id:2,name:'Sage Linen Kurta',desc:'Breathable linen kurta with hand-block print detailing',price:999,oldPrice:1299,category:'kurta',emoji:'🌿',sizes:['XS','S','M','L','XL'],color:'sage',badge:'New',img:'https://images.unsplash.com/photo-1617922001439-4a2e6562f328?w=500&q=80',img2:'',oos:false},
-  {id:3,name:'Lavender Suit Set',desc:'3-piece suit set with dupatta in chiffon lavender',price:2199,oldPrice:2799,category:'suit',emoji:'💜',sizes:['S','M','L'],color:'lavender',badge:'',img:'https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=500&q=80',img2:'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500&q=80',oos:false},
-  {id:4,name:'Buttercup Midi Dress',desc:'Flowy midi dress with subtle floral embroidery',price:1299,oldPrice:null,category:'dress',emoji:'🌼',sizes:['XS','S','M','L'],color:'butter',badge:'New',img:'https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=500&q=80',img2:'',oos:false},
-  {id:5,name:'Rose Organza Suit',desc:'Premium organza suit with gold zari border',price:2799,oldPrice:3499,category:'suit',emoji:'🌷',sizes:['S','M','L','XL'],color:'blush',badge:'Limited',img:'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=500&q=80',img2:'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80',oos:false},
-  {id:6,name:'Mint Chiffon Kurta',desc:'Light chiffon kurta perfect for festive occasions',price:1199,oldPrice:1599,category:'kurta',emoji:'🩵',sizes:['S','M','L','XL'],color:'mint',badge:'',img:'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500&q=80',img2:'',oos:false},
-  {id:7,name:'Peach Palazzo Set',desc:'Wide-leg palazzo with matching crop top in peach',price:1599,oldPrice:1999,category:'coord',emoji:'🍑',sizes:['XS','S','M','L'],color:'peach',badge:'Sale',img:'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500&q=80',img2:'',oos:false},
-  {id:8,name:'Lilac Sharara Set',desc:'Flared sharara with embellished kurta top in lilac',price:2499,oldPrice:3199,category:'sharara',emoji:'🪻',sizes:['S','M','L'],color:'lilac',badge:'Best Seller',img:'https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=500&q=80',img2:'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=500&q=80',oos:false},
-  {id:9,name:'Ivory Embroidered Set',desc:'Ivory pure cotton kurta with intricate floral embroidery',price:1899,oldPrice:2399,category:'kurta',emoji:'✨',sizes:['XS','S','M','L','XL'],color:'ivory',badge:'',img:'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=500&q=80',img2:'',oos:false},
+  {id:1,name:'Blush Rose Co-ord Set',desc:'Elegant matching top & palazzo in soft blush cotton',price:1499,oldPrice:1999,category:'coord',emoji:'🌸',sizes:['S','M','L','XL'],color:'blush',badge:'Best Seller',oos:false,
+   imgs:['https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600&q=80','https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80','https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80']},
+  {id:2,name:'Sage Linen Kurta',desc:'Breathable linen kurta with hand-block print detailing',price:999,oldPrice:1299,category:'kurta',emoji:'🌿',sizes:['XS','S','M','L','XL'],color:'sage',badge:'New',oos:false,
+   imgs:['https://images.unsplash.com/photo-1617922001439-4a2e6562f328?w=600&q=80']},
+  {id:3,name:'Lavender Suit Set',desc:'3-piece suit set with dupatta in chiffon lavender',price:2199,oldPrice:2799,category:'suit',emoji:'💜',sizes:['S','M','L'],color:'lavender',badge:'',oos:false,
+   imgs:['https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80','https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80']},
+  {id:4,name:'Buttercup Midi Dress',desc:'Flowy midi dress with subtle floral embroidery',price:1299,oldPrice:null,category:'dress',emoji:'🌼',sizes:['XS','S','M','L'],color:'butter',badge:'New',oos:false,
+   imgs:['https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600&q=80']},
+  {id:5,name:'Rose Organza Suit',desc:'Premium organza suit with gold zari border',price:2799,oldPrice:3499,category:'suit',emoji:'🌷',sizes:['S','M','L','XL'],color:'blush',badge:'Limited',oos:false,
+   imgs:['https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=600&q=80','https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80']},
+  {id:6,name:'Mint Chiffon Kurta',desc:'Light chiffon kurta perfect for festive occasions',price:1199,oldPrice:1599,category:'kurta',emoji:'🩵',sizes:['S','M','L','XL'],color:'mint',badge:'',oos:false,
+   imgs:['https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80']},
+  {id:7,name:'Peach Palazzo Set',desc:'Wide-leg palazzo with matching crop top in peach',price:1599,oldPrice:1999,category:'coord',emoji:'🍑',sizes:['XS','S','M','L'],color:'peach',badge:'Sale',oos:false,
+   imgs:['https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600&q=80']},
+  {id:8,name:'Lilac Sharara Set',desc:'Flared sharara with embellished kurta top in lilac',price:2499,oldPrice:3199,category:'sharara',emoji:'🪻',sizes:['S','M','L'],color:'lilac',badge:'Best Seller',oos:false,
+   imgs:['https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=600&q=80','https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600&q=80']},
+  {id:9,name:'Ivory Embroidered Set',desc:'Ivory pure cotton kurta with intricate floral embroidery',price:1899,oldPrice:2399,category:'kurta',emoji:'✨',sizes:['XS','S','M','L','XL'],color:'ivory',badge:'',oos:false,
+   imgs:['https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600&q=80']},
 ];
 
-/* ══ STATE ══ */
+/* ══════════════════════════════════════
+   STATE
+══════════════════════════════════════ */
 let products = JSON.parse(localStorage.getItem('pastelProducts') || 'null');
 if (!products) { products = DEFAULT_PRODUCTS; localStorage.setItem('pastelProducts', JSON.stringify(products)); }
+// Migrate old products that used img/img2 to new imgs[] format
+products = products.map(p => {
+  if (!p.imgs) {
+    p.imgs = [p.img, p.img2].filter(Boolean);
+    delete p.img; delete p.img2;
+  }
+  return p;
+});
 
 let cart = JSON.parse(localStorage.getItem('pastelCart') || '[]');
-let curView = 'home', curFilter = 'all', editId = null, checkoutStep = 1;
-let pendingImg = '', pendingImg2 = '';
+let curView = 'home', curFilter = 'all', editId = null;
+let pendingMainImg = '';
 
-/* ══ ADMIN VISIBILITY — only when ?admin=true ══ */
+/* ══════════════════════════════════════
+   ADMIN VISIBILITY — only if ?admin=true
+══════════════════════════════════════ */
 const isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
 if (isAdmin) document.getElementById('adminFab').classList.add('visible');
 
-/* ══ ROUTING ══ */
+/* ══════════════════════════════════════
+   SEO: DYNAMIC TITLE
+══════════════════════════════════════ */
+function setPageTitle(name) {
+  document.title = name ? `${name} | The Pastel Story` : 'The Pastel Story — By Shiwani';
+}
+
+/* ══════════════════════════════════════
+   ROUTING
+══════════════════════════════════════ */
 function goTo(view, anchor, push = true) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('view-' + view).classList.add('active');
   curView = view; window.scrollTo(0, 0);
   if (view === 'shop') renderShop();
-  if (view === 'cart') { checkoutStep = 1; renderCart(); }
+  if (view === 'cart') renderCart();
   if (view === 'home') renderArrivals();
-  if (anchor) setTimeout(() => { const el = document.querySelector(anchor); if (el) el.scrollIntoView({ behavior: 'smooth' }); }, 120);
+  if (view !== 'pdp') setPageTitle('');
+  if (anchor) setTimeout(() => { const el=document.querySelector(anchor); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);
   if (push) {
-    const url = view === 'home' ? (location.pathname + (isAdmin ? '?admin=true' : ''))
-      : ('?' + (isAdmin ? 'admin=true&' : '') + 'page=' + view);
+    const qs = isAdmin ? '?admin=true' : '';
+    const url = view === 'home' ? (location.pathname + qs)
+      : (qs ? qs + '&page=' + view : '?page=' + view);
     window.history.pushState({ view }, '', url);
   }
   updateBadge(); initReveal();
 }
 
-/* ══ OPEN PRODUCT DETAIL PAGE ══ */
 function openPDP(productId, push = true) {
   const p = products.find(x => x.id === productId); if (!p) return;
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('view-pdp').classList.add('active');
   curView = 'pdp'; window.scrollTo(0, 0);
   renderPDP(p);
+  setPageTitle(p.name); // ← Dynamic SEO title
   if (push) {
-    const url = '?' + (isAdmin ? 'admin=true&' : '') + 'page=pdp&id=' + productId;
-    window.history.pushState({ view: 'pdp', id: productId }, '', url);
+    const qs = isAdmin ? '?admin=true&' : '?';
+    window.history.pushState({ view:'pdp', id:productId }, '', `${qs}page=pdp&id=${productId}`);
   }
   updateBadge();
 }
 
-/* ══ BROWSER BACK / FORWARD ══ */
+function openPaymentPage(push = true) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-payment').classList.add('active');
+  curView = 'payment'; window.scrollTo(0, 0);
+  setPageTitle('Secure Payment');
+  renderPaymentPage();
+  if (push) {
+    const qs = isAdmin ? '?admin=true&' : '?';
+    window.history.pushState({ view:'payment' }, '', `${qs}page=payment`);
+  }
+  updateBadge();
+}
+
+/* Browser back/forward */
 window.addEventListener('popstate', e => {
-  const state = e.state;
-  if (!state) { goTo('home', null, false); return; }
-  if (state.view === 'pdp' && state.id) openPDP(state.id, false);
-  else goTo(state.view || 'home', null, false);
+  const s = e.state;
+  if (!s) { goTo('home', null, false); return; }
+  if (s.view === 'pdp' && s.id) openPDP(s.id, false);
+  else if (s.view === 'payment') openPaymentPage(false);
+  else goTo(s.view || 'home', null, false);
 });
 
 /* Initial URL parse */
-(function() {
+(function(){
   const p = new URLSearchParams(location.search);
   const page = p.get('page'), id = p.get('id');
-  if (page === 'pdp' && id) { openPDP(Number(id), false); }
+  if (page === 'pdp' && id) openPDP(Number(id), false);
+  else if (page === 'payment') openPaymentPage(false);
   else if (page && page !== 'home') goTo(page, null, false);
 })();
 
-/* ══ BADGE ══ */
-function updateBadge() { document.getElementById('cartBadge').textContent = cart.reduce((s,i) => s+i.qty, 0); }
-
-/* ══ TOAST ══ */
+/* ══════════════════════════════════════
+   BADGE + TOAST
+══════════════════════════════════════ */
+function updateBadge() {
+  document.getElementById('cartBadge').textContent = cart.reduce((s,i)=>s+i.qty,0);
+}
 function toast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+  setTimeout(()=>t.classList.remove('show'), 2500);
 }
 
-/* ══ NEW ARRIVALS ══ */
+/* ══════════════════════════════════════
+   NEW ARRIVALS
+══════════════════════════════════════ */
 function renderArrivals() {
   const grid = document.getElementById('arrivalsGrid');
   const picks = [...products].slice(0, 4);
-  grid.innerHTML = picks.map(p => `
-    <div class="arrival-card" onclick="openPDP(${p.id})">
+  grid.innerHTML = picks.map(p => {
+    const img = (p.imgs||[])[0]||'';
+    return `<div class="arrival-card" onclick="openPDP(${p.id})">
       <div class="arrival-img">
-        ${p.badge ? `<span class="arrival-badge">${p.badge}</span>` : ''}
-        ${p.img
-          ? `<img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-             <div class="arrival-img-fallback" style="display:none;background:${GRAD[p.color]||GRAD.blush}"><span style="font-size:2rem;opacity:.4">${p.emoji||'👗'}</span></div>`
-          : `<div class="arrival-img-fallback" style="background:${GRAD[p.color]||GRAD.blush}"><span style="font-size:2rem;opacity:.4">${p.emoji||'👗'}</span></div>`}
+        ${p.badge?`<span class="arrival-badge">${p.badge}</span>`:''}
+        ${img
+          ?`<img src="${img}" alt="${p.name}" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="arrival-img-fallback" style="display:none;background:${GRAD[p.color]||GRAD.blush}"><span style="font-size:2rem;opacity:.4">${p.emoji||'👗'}</span></div>`
+          :`<div class="arrival-img-fallback" style="background:${GRAD[p.color]||GRAD.blush}"><span style="font-size:2rem;opacity:.4">${p.emoji||'👗'}</span></div>`}
       </div>
       <div class="arrival-info">
         <div class="arrival-name">${p.name}</div>
-        <div class="arrival-price">₹${Number(p.price).toLocaleString('en-IN')}${p.oldPrice?`<span style="font-size:.7rem;color:var(--light);text-decoration:line-through;margin-left:.3rem">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`:''}
+        <div class="arrival-price">₹${Number(p.price).toLocaleString('en-IN')}
+          ${p.oldPrice?`<span style="font-size:.7rem;color:var(--light);text-decoration:line-through;margin-left:.3rem">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`:''}
         </div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
-/* ══════════════════════════════════════════
-   PRODUCT DETAIL PAGE RENDER
-══════════════════════════════════════════ */
-function renderPDP(p) {
-  const disc = p.oldPrice ? Math.round((1 - p.price / p.oldPrice) * 100) : 0;
-  const imgs = [p.img, p.img2].filter(Boolean);
-  const fallbackBg = GRAD[p.color] || GRAD.blush;
+/* ══════════════════════════════════════
+   SHOP RENDER (search + sort + filter)
+══════════════════════════════════════ */
+function renderShop() {
+  const grid    = document.getElementById('productGrid');
+  const query   = (document.getElementById('shopSearch')?.value||'').toLowerCase().trim();
+  const sortVal = document.getElementById('shopSort')?.value||'';
+  let list = curFilter==='all'?[...products]:products.filter(p=>p.category===curFilter);
+  if (query) list = list.filter(p=>p.name.toLowerCase().includes(query)||(p.desc||'').toLowerCase().includes(query));
+  if (sortVal==='low')  list.sort((a,b)=>a.price-b.price);
+  if (sortVal==='high') list.sort((a,b)=>b.price-a.price);
+  if (!list.length) { grid.innerHTML=`<div class="empty"><div class="empty-i">🌸</div><p class="empty-t">No pieces found.</p></div>`; return; }
+  grid.innerHTML = list.map(p => {
+    const img0=(p.imgs||[])[0]||'', img1=(p.imgs||[])[1]||'';
+    const bg = img0?'':`background:${GRAD[p.color]||GRAD.blush}`;
+    const badgeLbl = p.oos?'Sold Out':p.badge;
+    const badgeCls = p.oos?'pc-badge sold-out-badge':'pc-badge';
+    return `<div class="pc" data-id="${p.id}" onclick="openPDP(${p.id})">
+      <div class="pc-img" style="${bg}">
+        ${img0?`<img class="img-main" src="${img0}" alt="${p.name}" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='none';document.getElementById('fb${p.id}').style.display='flex'"/>
+          ${img1?`<img class="img-hover" src="${img1}" alt="${p.name}" loading="lazy"/>`:''}
+          <div class="pc-img-fallback" id="fb${p.id}" style="display:none"><span class="pc-em">${p.emoji||'👗'}</span><span class="pc-iname">${p.name}</span></div>`
+        :`<div class="pc-img-fallback"><span class="pc-em">${p.emoji||'👗'}</span><span class="pc-iname">${p.name}</span></div>`}
+        <div class="pc-img-ov"><span class="pc-img-ov-txt">View Details</span></div>
+        ${badgeLbl?`<span class="${badgeCls}">${badgeLbl}</span>`:''}
+        <button class="pc-wish" onclick="event.stopPropagation()">🤍</button>
+      </div>
+      <div class="pc-body">
+        <p class="pc-cat">${CAT_LABEL[p.category]||p.category}</p>
+        <h3 class="pc-name">${p.name}</h3>
+        <p class="pc-desc">${p.desc||''}</p>
+        <div class="pc-foot">
+          <div>
+            <span class="pc-price">₹${Number(p.price).toLocaleString('en-IN')}</span>
+            ${p.oldPrice?`<span class="pc-old">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`:''}
+          </div>
+          <button class="btn-atc" ${p.oos?'disabled':''} onclick="event.stopPropagation();quickAdd(${p.id})">
+            ${p.oos?'Out of Stock':'Add to Cart'}
+          </button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
 
-  const thumbsHtml = imgs.length > 1 ? `
+document.getElementById('filterBar').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn'); if(!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active'); curFilter=btn.dataset.filter; renderShop();
+});
+
+function quickAdd(id) {
+  const p=products.find(x=>x.id===id);if(!p||p.oos)return;
+  const size=p.sizes&&p.sizes[0]?p.sizes[0]:'One Size';
+  const ex=cart.find(i=>i.id===id&&i.size===size);
+  if(ex)ex.qty++;
+  else cart.push({id,name:p.name,price:p.price,emoji:p.emoji,color:p.color,img:(p.imgs||[])[0]||'',size,qty:1});
+  localStorage.setItem('pastelCart',JSON.stringify(cart));
+  updateBadge();toast(`✦ ${p.name} added`);
+}
+
+/* ══════════════════════════════════════
+   PDP RENDER — MULTI-IMAGE GALLERY + ZOOM
+══════════════════════════════════════ */
+function renderPDP(p) {
+  const imgs = (p.imgs||[]).filter(Boolean);
+  const mainImg = imgs[0]||'';
+  const disc = p.oldPrice?Math.round((1-p.price/p.oldPrice)*100):0;
+  const fallbackBg = GRAD[p.color]||GRAD.blush;
+
+  const thumbsHtml = imgs.length>1?`
     <div class="pdp-thumbs">
-      ${imgs.map((src, i) => `
+      ${imgs.map((src,i)=>`
         <div class="pdp-thumb ${i===0?'active':''}" onclick="pdpSetImg('${src}',this)">
-          <img src="${src}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <img src="${src}" alt="" loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
           <div class="pdp-thumb-fallback" style="display:none">${p.emoji||'👗'}</div>
         </div>`).join('')}
-    </div>` : '';
+    </div>`:'';
 
-  const sizesHtml = (p.sizes||[]).map(s =>
-    `<button class="pdp-sz" onclick="pdpSelectSize(this)">${s}</button>`
-  ).join('');
+  const sizesHtml = (p.sizes||[]).map(s=>`<button class="pdp-sz" onclick="pdpSelectSize(this)">${s}</button>`).join('');
 
   document.getElementById('pdpWrap').innerHTML = `
-    <!-- LEFT: Gallery -->
     <div class="pdp-gallery">
-      <div class="pdp-main-img">
-        ${p.img
-          ? `<img id="pdpMainImg" src="${p.img}" alt="${p.name}" onerror="this.style.display='none';document.getElementById('pdpFallback').style.display='flex'"/>
-             <div class="pdp-img-fallback" id="pdpFallback" style="display:none;background:${fallbackBg}">
-               <span style="font-size:3rem;opacity:.4">${p.emoji||'👗'}</span>
-               <p style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:rgba(80,50,40,.5);font-style:italic">${p.name}</p>
-             </div>`
-          : `<div class="pdp-img-fallback" style="background:${fallbackBg}">
-               <span style="font-size:3rem;opacity:.4">${p.emoji||'👗'}</span>
-               <p style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:rgba(80,50,40,.5);font-style:italic">${p.name}</p>
-             </div>`}
+      <div class="pdp-zoom-container" id="pdpZoomBox">
+        ${mainImg
+          ?`<img id="pdpMainImg" src="${mainImg}" alt="${p.name}"
+              onerror="this.style.display='none';document.getElementById('pdpFallback').style.display='flex'"/>`
+          :`<img id="pdpMainImg" src="" alt="${p.name}" style="display:none"/>`}
+        <div class="pdp-img-fallback" id="pdpFallback" style="${mainImg?'display:none':'display:flex'};background:${fallbackBg}">
+          <span style="font-size:3rem;opacity:.4">${p.emoji||'👗'}</span>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:.9rem;color:rgba(80,50,40,.5);font-style:italic">${p.name}</p>
+        </div>
+        <span class="zoom-hint">🔍 Hover to zoom</span>
       </div>
       ${thumbsHtml}
     </div>
 
-    <!-- RIGHT: Info -->
     <div class="pdp-info">
       <div class="pdp-breadcrumb">
         <button onclick="goTo('shop')">Shop</button>
@@ -887,14 +1153,10 @@ function renderPDP(p) {
       </div>
       <div class="pdp-price-row">
         <span class="pdp-price">₹${Number(p.price).toLocaleString('en-IN')}</span>
-        ${p.oldPrice ? `<span class="pdp-mrp">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>` : ''}
-        ${disc ? `<span class="pdp-discount">${disc}% OFF</span>` : ''}
+        ${p.oldPrice?`<span class="pdp-mrp">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>`:''}
+        ${disc?`<span class="pdp-discount">${disc}% OFF</span>`:''}
       </div>
-      ${sizesHtml ? `
-      <p class="pdp-section-label">Select Size</p>
-      <div class="pdp-sizes" id="pdpSizes">${sizesHtml}</div>` : ''}
-
-      <!-- Delivery / Pincode -->
+      ${sizesHtml?`<p class="pdp-section-label">Select Size</p><div class="pdp-sizes" id="pdpSizes">${sizesHtml}</div>`:''}
       <div class="pdp-delivery">
         <p class="pdp-delivery-title">📦 Delivery Info</p>
         <div class="pdp-pin-row">
@@ -906,163 +1168,110 @@ function renderPDP(p) {
           <span id="pdpDeliveryMsg"></span>
         </div>
       </div>
-
-      <!-- CTA -->
       <div class="pdp-actions">
         ${p.oos
-          ? `<button class="pdp-btn-cart" disabled>❌ Out of Stock</button>`
-          : `<button class="pdp-btn-cart" onclick="pdpAddToCart(${p.id})">🛍 Add to Cart</button>`}
+          ?`<button class="pdp-btn-cart" disabled>❌ Out of Stock</button>`
+          :`<button class="pdp-btn-cart" onclick="pdpAddToCart(${p.id})">🛍 Add to Cart</button>`}
         <button class="pdp-btn-wish">🤍 Wishlist</button>
       </div>
-
-      <!-- Highlights -->
       <div class="pdp-highlights">
         <div class="pdp-highlight-item"><span class="pdp-highlight-icon">✦</span><span><strong>Free shipping</strong> on orders above ₹999</span></div>
         <div class="pdp-highlight-item"><span class="pdp-highlight-icon">✦</span><span><strong>Easy returns</strong> within 7 days of delivery</span></div>
         <div class="pdp-highlight-item"><span class="pdp-highlight-icon">✦</span><span><strong>100% authentic</strong> fabric, handpicked by Shiwani</span></div>
-        <div class="pdp-highlight-item"><span class="pdp-highlight-icon">✦</span><span>${p.desc||'Premium quality, crafted with care'}</span></div>
+        <div class="pdp-highlight-item"><span class="pdp-highlight-icon">✦</span><span>${p.desc||'Premium quality crafted with care'}</span></div>
       </div>
     </div>`;
+
+  // Attach zoom after render
+  requestAnimationFrame(() => initZoom());
+}
+
+/* ─── ZOOM EFFECT ─── */
+function initZoom() {
+  const box = document.getElementById('pdpZoomBox');
+  const img = document.getElementById('pdpMainImg');
+  if (!box || !img) return;
+  const SCALE = 2.2;
+  box.addEventListener('mousemove', e => {
+    const r = box.getBoundingClientRect();
+    const xPct = (e.clientX - r.left) / r.width;
+    const yPct = (e.clientY - r.top)  / r.height;
+    // Clamp so image doesn't go outside container
+    const maxX = (SCALE - 1) * r.width;
+    const maxY = (SCALE - 1) * r.height;
+    const tx = -xPct * maxX;
+    const ty = -yPct * maxY;
+    img.style.transform = `scale(${SCALE}) translate(${tx/SCALE}px, ${ty/SCALE}px)`;
+    img.style.transformOrigin = `${xPct*100}% ${yPct*100}%`;
+    img.style.transition = 'none';
+  });
+  box.addEventListener('mouseleave', () => {
+    img.style.transform = 'scale(1) translate(0,0)';
+    img.style.transition = 'transform .3s ease';
+  });
 }
 
 /* PDP thumbnail switch */
 function pdpSetImg(src, el) {
-  const main = document.getElementById('pdpMainImg');
-  if (main) { main.style.opacity = '0'; setTimeout(() => { main.src = src; main.style.opacity = '1'; }, 280); }
-  document.querySelectorAll('.pdp-thumb').forEach(t => t.classList.remove('active'));
+  const img = document.getElementById('pdpMainImg');
+  if (img) {
+    img.style.transition='opacity .28s'; img.style.opacity='0';
+    setTimeout(()=>{ img.src=src; img.style.opacity='1'; img.style.transform='scale(1)'; },260);
+  }
+  document.querySelectorAll('.pdp-thumb').forEach(t=>t.classList.remove('active'));
   el.classList.add('active');
 }
 
 /* PDP size select */
 function pdpSelectSize(el) {
-  document.querySelectorAll('.pdp-sz').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.pdp-sz').forEach(s=>s.classList.remove('active'));
   el.classList.add('active');
 }
 
-/* Delivery pincode check */
-function checkDelivery(val, force = false) {
-  const result = document.getElementById('pdpDeliveryResult');
-  const msg    = document.getElementById('pdpDeliveryMsg');
-  if (val.length === 6 || (force && val.length > 0)) {
-    const d = new Date(); d.setDate(d.getDate() + 5);
-    const opts = { weekday:'long', day:'numeric', month:'long' };
-    const dateStr = d.toLocaleDateString('en-IN', opts);
-    msg.textContent = `Estimated delivery by ${dateStr}`;
-    result.classList.add('show');
-  } else {
-    result.classList.remove('show');
-  }
+/* Delivery pincode */
+function checkDelivery(val, force=false) {
+  const res=document.getElementById('pdpDeliveryResult');
+  const msg=document.getElementById('pdpDeliveryMsg');
+  if (!res||!msg) return;
+  if (val.length===6 || (force&&val.length>0)) {
+    const d=new Date(); d.setDate(d.getDate()+5);
+    msg.textContent=`Estimated delivery by ${d.toLocaleDateString('en-IN',{weekday:'long',day:'numeric',month:'long'})}`;
+    res.classList.add('show');
+  } else { res.classList.remove('show'); }
 }
 
-/* PDP Add to Cart */
+/* PDP add to cart */
 function pdpAddToCart(id) {
-  const p = products.find(x => x.id === id); if (!p || p.oos) return;
-  const sizeEl = document.querySelector('.pdp-sz.active');
-  const size = sizeEl ? sizeEl.textContent : (p.sizes&&p.sizes[0] ? p.sizes[0] : 'One Size');
-  const ex = cart.find(i => i.id===id && i.size===size);
-  if (ex) ex.qty++;
-  else cart.push({id, name:p.name, price:p.price, emoji:p.emoji, color:p.color, img:p.img||'', size, qty:1});
-  localStorage.setItem('pastelCart', JSON.stringify(cart));
-  updateBadge(); toast(`✦ ${p.name} (${size}) added to cart`);
+  const p=products.find(x=>x.id===id);if(!p||p.oos)return;
+  const sizeEl=document.querySelector('.pdp-sz.active');
+  const size=sizeEl?sizeEl.textContent:(p.sizes&&p.sizes[0]?p.sizes[0]:'One Size');
+  const ex=cart.find(i=>i.id===id&&i.size===size);
+  if(ex)ex.qty++;
+  else cart.push({id,name:p.name,price:p.price,emoji:p.emoji,color:p.color,img:(p.imgs||[])[0]||'',size,qty:1});
+  localStorage.setItem('pastelCart',JSON.stringify(cart));
+  updateBadge();toast(`✦ ${p.name} (${size}) added`);
 }
-
-/* ══════════════════════════════════════
-   SHOP RENDER (with search + sort)
-══════════════════════════════════════ */
-function renderShop() {
-  const grid     = document.getElementById('productGrid');
-  const query    = (document.getElementById('shopSearch')?.value || '').toLowerCase().trim();
-  const sortVal  = document.getElementById('shopSort')?.value || '';
-
-  let list = curFilter === 'all' ? [...products] : products.filter(p => p.category === curFilter);
-  if (query) list = list.filter(p => p.name.toLowerCase().includes(query) || (p.desc||'').toLowerCase().includes(query));
-  if (sortVal === 'low')  list.sort((a,b) => a.price - b.price);
-  if (sortVal === 'high') list.sort((a,b) => b.price - a.price);
-
-  if (!list.length) {
-    grid.innerHTML = `<div class="empty"><div class="empty-i">🌸</div><p class="empty-t">No pieces found.</p></div>`;
-    return;
-  }
-
-  grid.innerHTML = list.map(p => {
-    const hasHover = !!p.img2;
-    const bg = p.img ? '' : `background:${GRAD[p.color]||GRAD.blush}`;
-    const badgeLabel = p.oos ? 'Sold Out' : p.badge;
-    const badgeClass = p.oos ? 'pc-badge sold-out-badge' : 'pc-badge';
-    return `
-      <div class="pc" data-id="${p.id}" onclick="openPDP(${p.id})">
-        <div class="pc-img" style="${bg}">
-          ${p.img ? `
-            <img class="img-main" src="${p.img}" alt="${p.name}" loading="lazy"
-              onerror="this.style.display='none';document.getElementById('fb${p.id}').style.display='flex'"/>
-            ${hasHover ? `<img class="img-hover" src="${p.img2}" alt="${p.name}" loading="lazy"/>` : ''}
-            <div class="pc-img-fallback" id="fb${p.id}" style="display:none">
-              <span class="pc-em">${p.emoji||'👗'}</span><span class="pc-iname">${p.name}</span>
-            </div>` :
-            `<div class="pc-img-fallback"><span class="pc-em">${p.emoji||'👗'}</span><span class="pc-iname">${p.name}</span></div>`}
-          <div class="pc-img-ov"><span class="pc-img-ov-txt">View Details</span></div>
-          ${badgeLabel ? `<span class="${badgeClass}">${badgeLabel}</span>` : ''}
-          <button class="pc-wish" onclick="event.stopPropagation()">🤍</button>
-        </div>
-        <div class="pc-body">
-          <p class="pc-cat">${CAT_LABEL[p.category]||p.category}</p>
-          <h3 class="pc-name">${p.name}</h3>
-          <p class="pc-desc">${p.desc||''}</p>
-          <div class="pc-foot">
-            <div>
-              <span class="pc-price">₹${Number(p.price).toLocaleString('en-IN')}</span>
-              ${p.oldPrice ? `<span class="pc-old">₹${Number(p.oldPrice).toLocaleString('en-IN')}</span>` : ''}
-            </div>
-            <button class="btn-atc" ${p.oos?'disabled':''} onclick="event.stopPropagation();quickAddToCart(${p.id})">
-              ${p.oos ? 'Out of Stock' : 'Add to Cart'}
-            </button>
-          </div>
-        </div>
-      </div>`;
-  }).join('');
-}
-
-function quickAddToCart(id) {
-  const p = products.find(x => x.id===id); if (!p||p.oos) return;
-  const size = p.sizes&&p.sizes[0] ? p.sizes[0] : 'One Size';
-  const ex = cart.find(i=>i.id===id&&i.size===size);
-  if (ex) ex.qty++;
-  else cart.push({id, name:p.name, price:p.price, emoji:p.emoji, color:p.color, img:p.img||'', size, qty:1});
-  localStorage.setItem('pastelCart', JSON.stringify(cart));
-  updateBadge(); toast(`✦ ${p.name} added`);
-}
-
-/* Filters */
-document.getElementById('filterBar').addEventListener('click', e => {
-  const btn = e.target.closest('.filter-btn'); if (!btn) return;
-  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active'); curFilter = btn.dataset.filter; renderShop();
-});
 
 /* ══════════════════════════════════════
    CART
 ══════════════════════════════════════ */
-function getTotal() { const s = cart.reduce((a,i)=>a+i.price*i.qty,0); return s+(s>=999?0:99); }
+function getTotal() { const s=cart.reduce((a,i)=>a+i.price*i.qty,0);return s+(s>=999?0:99); }
 
 function renderCart() {
-  const wrap = document.getElementById('cartItems');
-  const sum  = document.getElementById('orderSummary');
-  checkoutStep = 1;
-  document.getElementById('btnIcon').textContent = '💳';
-  document.getElementById('btnTxt').textContent  = 'Proceed to Pay';
-  document.getElementById('upiSection').style.display = 'none';
+  const wrap=document.getElementById('cartItems');
+  const sum=document.getElementById('orderSummary');
   if (!cart.length) {
-    wrap.innerHTML = `<div class="cart-empty"><div class="cart-empty-i">🛍</div><p class="cart-empty-t">Your cart is empty</p><button class="btn-gold" onclick="goTo('shop')">✦ Browse Collection</button></div>`;
-    sum.style.display = 'none'; return;
+    wrap.innerHTML=`<div class="cart-empty"><div class="cart-empty-i">🛍</div><p class="cart-empty-t">Your cart is empty</p><button class="btn-gold" onclick="goTo('shop')">✦ Browse Collection</button></div>`;
+    sum.style.display='none';return;
   }
-  sum.style.display = '';
-  wrap.innerHTML = cart.map((item,i) => `
+  sum.style.display='';
+  wrap.innerHTML=cart.map((item,i)=>`
     <div class="ci" style="animation-delay:${i*.07}s">
       <div class="ci-thumb">
         ${item.img
-          ? `<img src="${item.img}" alt="${item.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-             <div class="ci-thumb-fb" style="display:none;background:${GRAD[item.color]||GRAD.blush}">${item.emoji||'👗'}</div>`
-          : `<div class="ci-thumb-fb" style="background:${GRAD[item.color]||GRAD.blush}">${item.emoji||'👗'}</div>`}
+          ?`<img src="${item.img}" alt="${item.name}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="ci-thumb-fb" style="display:none;background:${GRAD[item.color]||GRAD.blush}">${item.emoji||'👗'}</div>`
+          :`<div class="ci-thumb-fb" style="background:${GRAD[item.color]||GRAD.blush}">${item.emoji||'👗'}</div>`}
       </div>
       <div>
         <p class="ci-name">${item.name}</p>
@@ -1083,17 +1292,15 @@ function renderCart() {
 }
 
 function renderSummary() {
-  const sub = cart.reduce((s,i)=>s+i.price*i.qty,0), ship=sub>=999?0:99, total=sub+ship;
-  const sav = cart.reduce((s,i)=>{const p=products.find(x=>x.id===i.id);return s+(p&&p.oldPrice?(p.oldPrice-p.price)*i.qty:0)},0);
+  const sub=cart.reduce((s,i)=>s+i.price*i.qty,0),ship=sub>=999?0:99,total=sub+ship;
+  const sav=cart.reduce((s,i)=>{const p=products.find(x=>x.id===i.id);return s+(p&&p.oldPrice?(p.oldPrice-p.price)*i.qty:0)},0);
   document.getElementById('summaryRows').innerHTML=`
     <div class="sum-row"><span>Subtotal (${cart.reduce((s,i)=>s+i.qty,0)} items)</span><span>₹${sub.toLocaleString('en-IN')}</span></div>
     <div class="sum-row"><span>Shipping</span><span>${ship===0?'<span style="color:var(--success)">FREE</span>':'₹'+ship}</span></div>
     ${ship>0?`<div class="sum-row" style="font-size:.66rem;color:var(--light)"><span>Add ₹${(999-sub).toLocaleString('en-IN')} more for free shipping</span></div>`:''}`;
   document.getElementById('totalPrice').textContent='₹'+total.toLocaleString('en-IN');
-  document.getElementById('qrAmt').textContent='₹'+total.toLocaleString('en-IN');
   const sb=document.getElementById('savingsBox');
-  if(sav>0){sb.style.display='';sb.textContent=`🎉 You save ₹${sav.toLocaleString('en-IN')} on this order!`}
-  else sb.style.display='none';
+  if(sav>0){sb.style.display='';sb.textContent=`🎉 You save ₹${sav.toLocaleString('en-IN')}!`}else sb.style.display='none';
 }
 
 function chgQty(id,size,delta){
@@ -1107,133 +1314,176 @@ function rmItem(id,size){
 }
 
 /* ══════════════════════════════════════
-   UPI PAYMENT — DYNAMIC INTENT LINKS
+   CART → PAYMENT PAGE FLOW
 ══════════════════════════════════════ */
-document.getElementById('upiIdTxt').textContent = UPI_ID;
+function proceedToPayment() {
+  if (!cart.length) { toast('Your cart is empty!'); return; }
+  const name  = document.getElementById('custName').value.trim();
+  const phone = document.getElementById('custPhone').value.trim();
+  const addr  = document.getElementById('custAddr').value.trim();
+  if (!name||!phone||!addr) { toast('Please fill your name, phone & address'); return; }
+  if (!/^\d{10,13}$/.test(phone)) { toast('Enter a valid phone number'); return; }
+  openPaymentPage();
+}
 
-function buildUPIUrl(app) {
-  const amt  = getTotal();
-  const pa   = encodeURIComponent(UPI_ID);
-  const pn   = encodeURIComponent(SHOP);
-  const tn   = encodeURIComponent('Order - ' + SHOP);
-  /* Universal UPI intent that triggers app picker on Android;
-     app-specific deep links for better UX on known apps */
+/* ══════════════════════════════════════
+   PAYMENT PAGE
+══════════════════════════════════════ */
+function buildUPIUrl(app, customUpiId) {
+  const upiId = customUpiId || UPI_ID;
+  const amt   = getTotal();
+  const pa    = encodeURIComponent(upiId);
+  const pn    = encodeURIComponent('The Pastel Story');
+  const tn    = encodeURIComponent('Order - The Pastel Story');
   switch(app) {
     case 'gpay':    return `gpay://upi/pay?pa=${pa}&pn=${pn}&am=${amt}&cu=INR&tn=${tn}`;
     case 'phonepe': return `phonepe://pay?pa=${pa}&pn=${pn}&am=${amt}&cu=INR&tn=${tn}`;
     case 'paytm':   return `paytmmp://pay?pa=${pa}&pn=${pn}&am=${amt}&cu=INR&tn=${tn}`;
-    case 'bhim':    return `upi://pay?pa=${pa}&pn=${pn}&am=${amt}&cu=INR&tn=${tn}`;
     default:        return `upi://pay?pa=${pa}&pn=${pn}&am=${amt}&cu=INR&tn=${tn}`;
   }
 }
 
-function buildUPIAppButtons() {
-  const apps = [
-    { id:'gpay',    icon:'🟢', name:'Google Pay' },
-    { id:'phonepe', icon:'🟣', name:'PhonePe'    },
-    { id:'paytm',   icon:'🔵', name:'Paytm'      },
-    { id:'bhim',    icon:'🇮🇳', name:'BHIM / Other'},
-  ];
-  document.getElementById('upiAppGrid').innerHTML = apps.map(a => `
-    <a class="upi-app-btn" href="${buildUPIUrl(a.id)}"
-       onclick="return handleUPIClick(event,'${a.id}')">
-      <span class="app-icon">${a.icon}</span>${a.name}
-    </a>`).join('');
+function renderPaymentPage() {
+  const total = getTotal();
+  const totalStr = '₹' + total.toLocaleString('en-IN');
+
+  // Amount chips
+  document.getElementById('payAmountChip').textContent = totalStr;
+  document.getElementById('payAmtInline').textContent  = total.toLocaleString('en-IN');
+  document.getElementById('payUpiIdDisplay').textContent = UPI_ID;
+
+  // QR image
+  const qrImg = document.getElementById('payQrImg');
+  if (QR_IMAGE_URL) { qrImg.src = QR_IMAGE_URL; qrImg.style.display='block'; document.getElementById('payQrFallback').style.display='none'; }
+  else { qrImg.style.display='none'; renderQRFallback(); }
+
+  // Build app buttons with default UPI
+  updatePayAppLinks('');
 }
 
-function handleUPIClick(e, app) {
-  /* On mobile the href opens the app directly.
-     On desktop, show a toast explaining to use mobile. */
+function renderQRFallback() {
+  const grid = document.getElementById('qrGridVis');
+  if (!grid) return;
+  const sz=9; let html='';
+  const corners=new Set();
+  [[0,0],[0,1],[0,2],[0,3],[0,4],[1,0],[1,4],[2,0],[2,2],[2,4],[3,0],[3,4],[4,0],[4,1],[4,2],[4,3],[4,4],
+   [0,4],[0,5],[0,6],[0,7],[0,8],[1,8],[2,6],[2,8],[3,8],[4,4],[4,5],[4,6],[4,7],[4,8],
+   [4,0],[5,0],[6,0],[7,0],[8,0],[8,1],[8,2],[8,3],[8,4],[6,2],[4,0]].forEach(([r,c])=>corners.add(r*sz+c));
+  for(let i=0;i<sz*sz;i++) html+=`<div style="border-radius:1px;background:${corners.has(i)||Math.random()>.5?'#3a2e2b':'transparent'}"></div>`;
+  grid.innerHTML=html;
+}
+
+function updatePayAppLinks(customUpi) {
+  ['gpay','phonepe','paytm','bhim'].forEach(app=>{
+    const el=document.getElementById(app+'Btn');
+    if(el) el.href=buildUPIUrl(app,customUpi);
+  });
+}
+
+function useCustomUPI() {
+  const val = document.getElementById('customUpiInput').value.trim();
+  if (!val) { toast('Please enter a UPI ID first'); return; }
+  updatePayAppLinks(val);
+  toast(`✦ App links updated with ${val}`);
+}
+
+function handleAppPay(app) {
+  const custom = document.getElementById('customUpiInput')?.value.trim()||'';
+  const url = buildUPIUrl(app, custom);
   const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
   if (!isMobile) {
-    e.preventDefault();
-    toast('Open this page on your mobile to pay via ' + app.charAt(0).toUpperCase() + app.slice(1));
+    toast('Open this page on your phone to pay via ' + app.charAt(0).toUpperCase()+app.slice(1));
+    return false;
   }
-  return true;
+  window.location.href = url;
+  return false;
 }
 
 function copyUPI() {
-  try { navigator.clipboard.writeText(UPI_ID); } catch(e) {}
-  try { const el=document.createElement('textarea');el.value=UPI_ID;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el); } catch(e) {}
+  const id = document.getElementById('customUpiInput')?.value.trim() || UPI_ID;
+  try { navigator.clipboard.writeText(id); } catch(e) {}
+  try { const el=document.createElement('textarea');el.value=id;document.body.appendChild(el);el.select();document.execCommand('copy');document.body.removeChild(el); } catch(e) {}
   toast('✦ UPI ID copied!');
 }
 
-function genQR() {
-  const box=document.getElementById('qrInner'),sz=11;
-  let html=`<div style="display:grid;grid-template-columns:repeat(${sz},1fr);gap:1.5px;width:116px;height:116px">`;
-  const c=new Set();
-  [[0,0],[0,1],[0,2],[0,3],[0,4],[1,0],[1,4],[2,0],[2,2],[2,4],[3,0],[3,4],[4,0],[4,1],[4,2],[4,3],[4,4],
-   [0,6],[0,7],[0,8],[0,9],[0,10],[1,6],[1,10],[2,6],[2,8],[2,10],[3,6],[3,10],[4,6],[4,7],[4,8],[4,9],[4,10],
-   [6,0],[7,0],[8,0],[9,0],[10,0],[6,4],[7,4],[8,4],[9,4],[10,4],[6,1],[6,2],[6,3],[8,2],[10,1],[10,2],[10,3]
-  ].forEach(([r,col])=>c.add(r*sz+col));
-  for(let i=0;i<sz*sz;i++) html+=`<div style="border-radius:1px;background:${c.has(i)||Math.random()>.55?'#3a2e2b':'transparent'}"></div>`;
-  box.innerHTML=html+'</div>';
-}
-
-/* ══════════════════════════════════════
-   CHECKOUT FLOW
-══════════════════════════════════════ */
-function handleCheckout() {
-  if (!cart.length) { toast('Your cart is empty!'); return; }
-  if (checkoutStep === 1) {
-    const name  = document.getElementById('custName').value.trim();
-    const phone = document.getElementById('custPhone').value.trim();
-    const addr  = document.getElementById('custAddr').value.trim();
-    if (!name||!phone||!addr) { toast('Please fill your name, phone & address'); return; }
-    if (!/^\d{10,13}$/.test(phone)) { toast('Enter a valid phone number'); return; }
-    checkoutStep = 2;
-    document.getElementById('upiSection').style.display = '';
-    document.getElementById('btnIcon').textContent = '✅';
-    document.getElementById('btnTxt').textContent  = 'Confirm Order — Payment Done';
-    document.getElementById('upiSection').scrollIntoView({ behavior:'smooth', block:'nearest' });
-    genQR(); buildUPIAppButtons();
-    toast('Complete UPI payment then tap Confirm below');
-  } else {
-    placeOrder();
-  }
-}
-
-function placeOrder() {
+/* ── CONFIRM ORDER ── */
+function confirmOrder() {
   const name  = document.getElementById('custName').value.trim();
   const phone = document.getElementById('custPhone').value.trim();
   const addr  = document.getElementById('custAddr').value.trim();
   const pin   = document.getElementById('custPin').value.trim();
-  const total = getTotal(), oid = 'TPS-' + Date.now().toString().slice(-6);
-  const items = cart.map(i=>`• ${i.emoji} ${i.name} (${i.size}) ×${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('\n');
-  const msg   = encodeURIComponent(`🌸 *New Order — The Pastel Story*\nOrder ID: ${oid}\n\n*Customer:* ${name}\n*Phone:* ${phone}\n*Address:* ${addr}${pin?', '+pin:''}\n\n*Items:*\n${items}\n\n*Total Paid: ₹${total.toLocaleString('en-IN')}*\n*Payment:* UPI ✅\n\nPlease confirm my order. Thank you! 🙏`);
+  const total = getTotal();
+  const oid   = 'TPS-' + Date.now().toString().slice(-6);
+
+  const itemsText = cart.map(i=>`• ${i.emoji} ${i.name} (${i.size}) ×${i.qty} = ₹${(i.price*i.qty).toLocaleString('en-IN')}`).join('\n');
+
+  // ── Google Sheets order tracking ──
+  sendToSheets({
+    orderId: oid,
+    name,
+    phone,
+    address: addr + (pin?', '+pin:''),
+    items: cart.map(i=>`${i.name} (${i.size}) x${i.qty}`).join('; '),
+    total: total,
+  });
+
+  // WhatsApp message
+  const msg = encodeURIComponent(
+    `🌸 *New Order — The Pastel Story*\nOrder ID: ${oid}\n\n*Customer:* ${name}\n*Phone:* ${phone}\n*Address:* ${addr}${pin?', '+pin:''}\n\n*Items:*\n${itemsText}\n\n*Total Paid: ₹${total.toLocaleString('en-IN')}*\n*Payment:* UPI ✅\n\nPlease confirm my order. Thank you! 🙏`
+  );
+
   document.getElementById('modalOid').textContent = 'Order ID: ' + oid;
   document.getElementById('waLink').href = `https://wa.me/${WHATSAPP}?text=${msg}`;
   document.getElementById('successModal').classList.add('show');
   cart=[]; localStorage.removeItem('pastelCart'); updateBadge();
 }
-function afterOrder() { document.getElementById('successModal').classList.remove('show'); goTo('shop'); }
+
+function afterOrder() {
+  document.getElementById('successModal').classList.remove('show');
+  goTo('shop');
+}
 
 /* ══════════════════════════════════════
-   ADMIN — IMAGE MANAGEMENT
+   ADMIN — MULTI-IMAGE MANAGEMENT
 ══════════════════════════════════════ */
 function showImgPreview(src) {
-  const pw=document.getElementById('imgPreviewWrap'),pe=document.getElementById('imgPreviewEl'),em=document.getElementById('imgEmpty'),wi=document.getElementById('imgWidget');
-  pe.src=src; pw.classList.add('show'); em.style.display='none'; wi.classList.add('has-img'); pendingImg=src;
+  const pw=document.getElementById('imgPreviewWrap'),pe=document.getElementById('imgPreviewEl');
+  const em=document.getElementById('imgEmpty'),wi=document.getElementById('imgWidget');
+  pe.src=src;pw.classList.add('show');em.style.display='none';wi.classList.add('has-img');pendingMainImg=src;
 }
 function clearImg() {
   const pw=document.getElementById('imgPreviewWrap'),em=document.getElementById('imgEmpty'),wi=document.getElementById('imgWidget');
-  pw.classList.remove('show'); document.getElementById('imgPreviewEl').src='';
-  em.style.display='flex'; wi.classList.remove('has-img');
-  document.getElementById('imgUrlInput').value=''; document.getElementById('imgFileInput').value=''; pendingImg='';
+  pw.classList.remove('show');document.getElementById('imgPreviewEl').src='';
+  em.style.display='flex';wi.classList.remove('has-img');
+  document.getElementById('mainImgUrlInput').value='';document.getElementById('imgFileInput').value='';pendingMainImg='';
 }
 function handleFileUpload(input) {
   const file=input.files[0];if(!file)return;
   const r=new FileReader();r.onload=e=>showImgPreview(e.target.result);r.readAsDataURL(file);
 }
-function loadFromUrl() {
-  const url=document.getElementById('imgUrlInput').value.trim();
-  if(!url){toast('Please enter an image URL');return;}
-  showImgPreview(url); toast('Image loaded ✦');
+function loadMainImgFromUrl() {
+  const url=document.getElementById('mainImgUrlInput').value.trim();
+  if(!url){toast('Please enter a URL');return;}
+  showImgPreview(url);toast('Image loaded ✦');
 }
 
-/* ══ ADMIN PANEL ══ */
+/* Multi-image URL rows */
+function addImgUrlRow(value='') {
+  const list=document.getElementById('multiImgList');
+  const row=document.createElement('div');row.className='multi-img-row';
+  row.innerHTML=`<input type="url" placeholder="https://… additional image URL" value="${value}"/>
+    <button onclick="this.parentElement.remove()" title="Remove">✕</button>`;
+  list.appendChild(row);
+}
+
+function getAdditionalImgUrls() {
+  return Array.from(document.querySelectorAll('#multiImgList .multi-img-row input'))
+    .map(i=>i.value.trim()).filter(Boolean);
+}
+
+/* Toggle admin */
 function toggleAdmin() {
-  if (!isAdmin) return;
+  if(!isAdmin)return;
   const p=document.getElementById('adminPanel');
   if(p.classList.toggle('open')) renderAdminList();
 }
@@ -1243,13 +1493,14 @@ function renderAdminList() {
   document.getElementById('adminList').innerHTML=products.map(p=>`
     <div class="api">
       <div class="api-thumb">
-        ${p.img?`<img src="${p.img}" alt="${p.name}" onerror="this.style.display='none'">`:(p.emoji||'👗')}
+        ${(p.imgs||[])[0]?`<img src="${p.imgs[0]}" alt="" onerror="this.style.display='none'">`:p.emoji||'👗'}
       </div>
       <div class="api-info">
         <div class="api-name">${p.name}</div>
         <div class="api-meta">
           <span>₹${Number(p.price).toLocaleString('en-IN')}</span>
           <span>·</span><span>${CAT_LABEL[p.category]||p.category}</span>
+          <span class="api-img-count">📷 ${(p.imgs||[]).length} img${(p.imgs||[]).length!==1?'s':''}</span>
           ${p.oos?'<span class="api-oos-tag">Out of Stock</span>':''}
         </div>
       </div>
@@ -1273,17 +1524,19 @@ function editProd(id) {
   document.getElementById('pColor').value   =p.color||'blush';
   document.getElementById('pBadge').value   =p.badge||'';
   document.getElementById('pOos').checked   =!!p.oos;
-  document.getElementById('img2UrlInput').value=p.img2||'';
-  pendingImg2=p.img2||'';
-  if(p.img){showImgPreview(p.img);if(!p.img.startsWith('data:'))document.getElementById('imgUrlInput').value=p.img;}
+  const imgs=p.imgs||[];
+  if(imgs[0]){showImgPreview(imgs[0]);if(!imgs[0].startsWith('data:'))document.getElementById('mainImgUrlInput').value=imgs[0];}
   else clearImg();
+  // Load extra images
+  document.getElementById('multiImgList').innerHTML='';
+  imgs.slice(1).forEach(src=>addImgUrlRow(src));
   document.getElementById('saveBtn').textContent='✦ Update Product';
   document.getElementById('adminPanel').scrollTop=0;
   toast('Editing: '+p.name);
 }
 
 function delProd(id) {
-  if(!confirm('Remove this product from the shop?'))return;
+  if(!confirm('Remove this product?'))return;
   products=products.filter(p=>p.id!==id);
   localStorage.setItem('pastelProducts',JSON.stringify(products));
   if(curView==='shop')renderShop();renderArrivals();renderAdminList();toast('Product removed');
@@ -1293,9 +1546,10 @@ function saveProduct() {
   const name =document.getElementById('pName').value.trim();
   const price=parseFloat(document.getElementById('pPrice').value);
   if(!name||!price){toast('Name and price are required');return;}
-  pendingImg2=document.getElementById('img2UrlInput').value.trim();
+  const extraImgs = getAdditionalImgUrls();
+  const allImgs = pendingMainImg ? [pendingMainImg, ...extraImgs] : extraImgs;
   const data={
-    name, desc:document.getElementById('pDesc').value.trim(), price,
+    name,desc:document.getElementById('pDesc').value.trim(),price,
     oldPrice:parseFloat(document.getElementById('pOldPrice').value)||null,
     category:document.getElementById('pCat').value,
     emoji:document.getElementById('pEmoji').value.trim()||'👗',
@@ -1303,7 +1557,7 @@ function saveProduct() {
     color:document.getElementById('pColor').value,
     badge:document.getElementById('pBadge').value,
     oos:document.getElementById('pOos').checked,
-    img:pendingImg||'', img2:pendingImg2||'',
+    imgs:allImgs,
   };
   if(editId){
     const idx=products.findIndex(p=>p.id===editId);
@@ -1317,22 +1571,27 @@ function saveProduct() {
 }
 
 function resetAdminForm() {
-  ['pName','pDesc','pPrice','pOldPrice','pEmoji','pSizes','img2UrlInput'].forEach(id=>document.getElementById(id).value='');
+  ['pName','pDesc','pPrice','pOldPrice','pEmoji','pSizes','mainImgUrlInput'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('pCat').value='kurta';document.getElementById('pColor').value='blush';
   document.getElementById('pBadge').value='';document.getElementById('pOos').checked=false;
   document.getElementById('saveBtn').textContent='✦ Add Product to Shop';
-  clearImg();pendingImg2='';editId=null;
+  document.getElementById('multiImgList').innerHTML='';
+  clearImg();pendingMainImg='';editId=null;
 }
 
-/* ══ SCROLL REVEAL ══ */
+/* ══════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════ */
 function initReveal() {
   const els=document.querySelectorAll('#view-'+curView+' .reveal');
-  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:.08});
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:.08});
   els.forEach(el=>{el.classList.remove('visible');obs.observe(el);});
 }
 const feedPosts=document.querySelectorAll('.feed-post');
 const fObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>{e.target.style.opacity='1';e.target.style.transform='translateY(0)'},Array.from(feedPosts).indexOf(e.target)*72);fObs.unobserve(e.target);}});
+  entries.forEach(e=>{if(e.isIntersecting){setTimeout(()=>{e.target.style.opacity='1';e.target.style.transform='translateY(0)';},Array.from(feedPosts).indexOf(e.target)*72);fObs.unobserve(e.target);}});
 },{threshold:.06});
 feedPosts.forEach(p=>{p.style.opacity='0';p.style.transform='translateY(16px)';p.style.transition='opacity .52s ease,transform .52s ease';fObs.observe(p);});
 
