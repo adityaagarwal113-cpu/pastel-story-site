@@ -167,40 +167,41 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .filter-btn{padding:.42rem 1.1rem;border:1px solid var(--gborder);border-radius:20px;background:transparent;font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:all .22s}
 .filter-btn:hover,.filter-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
 .shop-wrap{max-width:1200px;margin:0 auto;padding:.5rem 4% 5rem}
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.8rem}
+.product-grid{display:flex;flex-direction:column;gap:1rem}
 
 /* ════════════════════════════════════════
-   PRODUCT CARD
+   PRODUCT CARD — horizontal (image left, details right)
 ════════════════════════════════════════ */
-.pc{background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 2px 20px rgba(180,120,100,.07);transition:transform .3s,box-shadow .3s;position:relative;cursor:pointer}
-.pc:hover{transform:translateY(-5px);box-shadow:0 12px 38px rgba(180,120,100,.14)}
-.pc-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--blush)}
+.pc{background:#fff;border-radius:10px;overflow:hidden;box-shadow:0 2px 20px rgba(180,120,100,.07);transition:transform .25s,box-shadow .25s;position:relative;cursor:pointer;display:flex;flex-direction:row;height:180px}
+.pc:hover{transform:translateY(-3px);box-shadow:0 10px 36px rgba(180,120,100,.14)}
+.pc-img{position:relative;width:140px;min-width:140px;height:100%;overflow:hidden;background:var(--blush);flex-shrink:0}
 .pc-img img{width:100%;height:100%;object-fit:cover;object-position:top;position:absolute;inset:0;transition:opacity .45s ease}
 .pc-img img.img-hover{opacity:0}
 .pc:hover .pc-img img.img-main{opacity:0}
 .pc:hover .pc-img img.img-hover{opacity:1}
-.pc-img-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.5rem;position:relative;z-index:0}
-.pc-em{font-size:2.4rem;opacity:.42}.pc-iname{font-family:'Cormorant Garamond',serif;font-size:.73rem;color:rgba(80,50,40,.45);letter-spacing:.1em;font-style:italic}
-.pc-badge{position:absolute;top:10px;left:10px;background:var(--gold);color:#fff;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;padding:.22rem .62rem;border-radius:2px;z-index:2}
+.pc-img-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;position:relative;z-index:0}
+.pc-em{font-size:2rem;opacity:.42}.pc-iname{font-family:'Cormorant Garamond',serif;font-size:.65rem;color:rgba(80,50,40,.45);letter-spacing:.1em;font-style:italic}
+.pc-badge{position:absolute;top:8px;left:8px;background:var(--gold);color:#fff;font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;padding:.18rem .52rem;border-radius:2px;z-index:2}
 .pc-badge.sold-out-badge{background:#9a8a85}
-.pc-wish{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.88);border:none;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;transition:transform .2s;z-index:2}
+.pc-wish{position:absolute;bottom:8px;left:8px;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;font-size:.82rem;display:flex;align-items:center;justify-content:center;transition:transform .2s;z-index:2}
 .pc-wish:hover{transform:scale(1.15)}
-.pc-img-ov{position:absolute;inset:0;background:rgba(58,46,43,.18);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;justify-content:center;padding-bottom:1rem;z-index:1}
+.pc-img-ov{position:absolute;inset:0;background:rgba(58,46,43,.18);opacity:0;transition:opacity .3s;display:flex;align-items:center;justify-content:center;z-index:1}
 .pc:hover .pc-img-ov{opacity:1}
-.pc-img-ov-txt{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:rgba(58,46,43,.65);padding:.3rem .9rem;border-radius:2px;backdrop-filter:blur(4px)}
-.pc-body{padding:1.1rem}
-.pc-cat{font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.22rem}
-.pc-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:400;color:var(--dark);margin-bottom:.28rem;line-height:1.3}
-.pc-desc{font-size:.68rem;color:var(--light);line-height:1.6;margin-bottom:.72rem}
-.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:.65rem}
-.pc-price{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:600;color:var(--dark)}
-.pc-old{font-size:.72rem;color:var(--light);text-decoration:line-through;margin-left:.22rem}
-.btn-atc{flex:1;padding:.58rem;background:var(--dark);color:#fff;border:none;border-radius:3px;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.pc-img-ov-txt{font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:#fff;background:rgba(58,46,43,.65);padding:.28rem .8rem;border-radius:2px;backdrop-filter:blur(4px)}
+.pc-body{padding:1rem 1.2rem;display:flex;flex-direction:column;justify-content:space-between;flex:1;min-width:0}
+.pc-cat{font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.18rem}
+.pc-name{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:400;color:var(--dark);margin-bottom:.22rem;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-desc{font-size:.67rem;color:var(--light);line-height:1.55;margin-bottom:.6rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pc-foot{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-top:auto}
+.pc-price{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;color:var(--dark)}
+.pc-old{font-size:.7rem;color:var(--light);text-decoration:line-through;margin-left:.2rem}
+.btn-atc{padding:.5rem 1rem;background:var(--dark);color:#fff;border:none;border-radius:3px;font-family:'Jost',sans-serif;font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .3s;white-space:nowrap}
 .btn-atc:hover:not(:disabled){background:var(--gold)}
 .btn-atc:disabled{background:#ccc;color:#999;cursor:not-allowed}
-.empty{text-align:center;padding:4rem 2rem;grid-column:1/-1}
+.empty{text-align:center;padding:4rem 2rem}
 .empty-i{font-size:2.6rem;opacity:.3;margin-bottom:.7rem}
 .empty-t{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-style:italic;color:var(--mid)}
+@media(max-width:480px){.pc{height:150px}.pc-img{width:110px;min-width:110px}.pc-name{font-size:.95rem}}
 
 /* ════════════════════════════════════════
    PRODUCT DETAIL PAGE (PDP) — MYNTRA STYLE
@@ -555,6 +556,136 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
 .site-img-btn{padding:.5rem .8rem;background:var(--gold);color:#fff;border:none;border-radius:4px;font-size:.62rem;cursor:pointer;white-space:nowrap;font-family:'Jost',sans-serif}
 .site-img-save{width:100%;padding:.7rem;background:var(--dark);color:#fff;border:none;border-radius:4px;font-family:'Jost',sans-serif;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;margin-top:.5rem;transition:background .2s}
 .site-img-save:hover{background:var(--gold)}
+
+/* ════════════════════════════════════════
+   SHOP LAYOUT WITH FILTER SIDEBAR
+════════════════════════════════════════ */
+.shop-layout{display:grid;grid-template-columns:240px 1fr;gap:2rem;max-width:1280px;margin:0 auto;padding:.5rem 4% 5rem;align-items:start}
+@media(max-width:768px){.shop-layout{grid-template-columns:1fr}}
+.filter-sidebar{background:#fff;border-radius:10px;padding:1.4rem;box-shadow:0 2px 20px rgba(180,120,100,.07);position:sticky;top:6rem}
+@media(max-width:768px){.filter-sidebar{position:static;display:none}.filter-sidebar.open{display:block}}
+.fs-title{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--dark);margin-bottom:1.2rem;padding-bottom:.7rem;border-bottom:1px solid var(--gborder)}
+.fs-section{margin-bottom:1.4rem}
+.fs-label{font-size:.56rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;display:block}
+.fs-price-btns{display:flex;flex-direction:column;gap:.4rem}
+.fs-price-btn{padding:.48rem .8rem;border:1px solid var(--gborder);border-radius:20px;background:transparent;font-family:'Jost',sans-serif;font-size:.68rem;color:var(--mid);cursor:pointer;transition:all .2s;text-align:left}
+.fs-price-btn:hover,.fs-price-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
+/* Price slider */
+.price-slider-wrap{padding:.4rem 0 .6rem}
+.price-range-display{display:flex;justify-content:space-between;font-family:'Cormorant Garamond',serif;font-size:.95rem;color:var(--dark);margin-bottom:.8rem;font-weight:400}
+.price-range-display span{background:rgba(201,169,110,.1);padding:.15rem .6rem;border-radius:3px;color:var(--gold)}
+.slider-track{position:relative;height:4px;background:var(--gold-light);border-radius:2px;margin:0 .3rem}
+.slider-range-fill{position:absolute;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-d));border-radius:2px;pointer-events:none}
+.price-slider{-webkit-appearance:none;appearance:none;position:absolute;width:100%;height:4px;background:transparent;outline:none;cursor:pointer;pointer-events:auto;top:0;left:0;margin:0}
+.price-slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:2.5px solid var(--gold);cursor:pointer;box-shadow:0 2px 8px rgba(201,169,110,.35);transition:transform .15s}
+.price-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:2.5px solid var(--gold);cursor:pointer;box-shadow:0 2px 8px rgba(201,169,110,.35)}
+.price-slider::-webkit-slider-thumb:hover{transform:scale(1.2)}
+#sliderMin{z-index:2}
+#sliderMax{z-index:3}
+.fs-size-grid{display:flex;flex-wrap:wrap;gap:.4rem}
+.fs-size-btn{width:38px;height:38px;border:1.5px solid var(--gborder);border-radius:4px;background:transparent;font-family:'Jost',sans-serif;font-size:.65rem;color:var(--mid);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.fs-size-btn:hover,.fs-size-btn.active{background:var(--gold);border-color:var(--gold);color:#fff}
+.fs-clear-btn{width:100%;padding:.52rem;background:transparent;border:1px solid var(--gborder);border-radius:4px;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);cursor:pointer;margin-top:.4rem;transition:all .2s}
+.fs-clear-btn:hover{background:var(--dark);color:#fff;border-color:var(--dark)}
+.filter-toggle-btn{display:none;align-items:center;gap:.5rem;padding:.52rem 1rem;border:1px solid var(--gborder);border-radius:20px;background:#fff;font-family:'Jost',sans-serif;font-size:.65rem;color:var(--mid);cursor:pointer}
+@media(max-width:768px){.filter-toggle-btn{display:flex}}
+.active-filter-count{background:var(--gold);color:#fff;border-radius:50%;width:18px;height:18px;font-size:.55rem;display:flex;align-items:center;justify-content:center}
+
+/* ════════════════════════════════════════
+   WISHLIST VIEW
+════════════════════════════════════════ */
+#view-wishlist{padding-top:5rem;min-height:100vh;background:var(--cream)}
+.wishlist-wrap{max-width:900px;margin:0 auto;padding:2.5rem 4% 5rem}
+.wishlist-header{margin-bottom:2rem}
+.wishlist-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--dark);margin-bottom:.3rem}
+.wishlist-count{font-size:.72rem;color:var(--mid);letter-spacing:.06em}
+.wishlist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+.wl-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 20px rgba(180,120,100,.07);transition:transform .3s,box-shadow .3s;position:relative}
+.wl-card:hover{transform:translateY(-4px);box-shadow:0 10px 35px rgba(180,120,100,.13)}
+.wl-img{aspect-ratio:3/4;position:relative;overflow:hidden;background:var(--blush);cursor:pointer}
+.wl-img img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s}
+.wl-card:hover .wl-img img{transform:scale(1.04)}
+.wl-remove{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;font-size:.9rem;display:flex;align-items:center;justify-content:center;z-index:2;transition:transform .2s}
+.wl-remove:hover{transform:scale(1.15);background:#fff}
+.wl-body{padding:1rem}
+.wl-cat{font-size:.54rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem}
+.wl-name{font-family:'Cormorant Garamond',serif;font-size:1rem;color:var(--dark);margin-bottom:.6rem;line-height:1.3}
+.wl-price{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--dark);margin-bottom:.8rem}
+.wl-old{font-size:.72rem;color:var(--light);text-decoration:line-through;margin-left:.3rem}
+.wl-actions{display:flex;gap:.5rem}
+.wl-atc{flex:1;padding:.6rem;background:var(--dark);color:#fff;border:none;border-radius:3px;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .3s}
+.wl-atc:hover{background:var(--gold)}
+.wl-view{padding:.6rem .8rem;border:1px solid var(--gborder);border-radius:3px;background:transparent;font-family:'Jost',sans-serif;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);cursor:pointer;transition:all .2s}
+.wl-view:hover{border-color:var(--gold);color:var(--gold)}
+.wishlist-empty{text-align:center;padding:5rem 2rem}
+.wl-empty-em{font-size:3.5rem;margin-bottom:1rem;opacity:.4}
+.wl-empty-t{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-style:italic;color:var(--mid);margin-bottom:.5rem}
+.wl-empty-s{font-size:.78rem;color:var(--light);margin-bottom:2rem}
+.wish-nav-btn{position:relative;display:flex;align-items:center;gap:.3rem}
+.wish-nav-count{background:var(--dusty);color:#fff;border-radius:50%;width:16px;height:16px;font-size:.5rem;display:flex;align-items:center;justify-content:center;position:absolute;top:-6px;right:-8px}
+
+/* ════════════════════════════════════════
+   HELP / TICKET VIEW
+════════════════════════════════════════ */
+#view-help{padding-top:5rem;min-height:100vh;background:var(--cream)}
+.help-wrap{max-width:780px;margin:0 auto;padding:2.5rem 4% 5rem}
+.help-header{margin-bottom:2.5rem}
+.help-eyebrow{font-size:.58rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:.6rem}
+.help-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,2.8rem);font-weight:300;color:var(--dark);margin-bottom:.5rem}
+.help-sub{font-size:.8rem;color:var(--mid);line-height:1.7}
+.faq-section{margin-bottom:2.5rem}
+.faq-title{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.faq-item{border:1px solid var(--gborder);border-radius:8px;margin-bottom:.6rem;background:#fff;overflow:hidden}
+.faq-q{width:100%;padding:1rem 1.2rem;background:none;border:none;font-family:'Jost',sans-serif;font-size:.82rem;color:var(--dark);cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left;gap:1rem}
+.faq-q:hover{background:rgba(201,169,110,.04)}
+.faq-chevron{font-size:.7rem;transition:transform .25s;flex-shrink:0;color:var(--gold)}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;font-size:.78rem;color:var(--mid);line-height:1.8}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a-inner{padding:.2rem 1.2rem 1rem}
+.ticket-section{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 6px 30px rgba(180,120,100,.08)}
+.ticket-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--dark);margin-bottom:.4rem}
+.ticket-sub{font-size:.74rem;color:var(--mid);margin-bottom:1.6rem}
+.ticket-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+@media(max-width:600px){.ticket-row{grid-template-columns:1fr}}
+.ticket-fg{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.ticket-fl{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.ticket-fi{padding:.72rem 1rem;border:1.5px solid var(--gborder);border-radius:6px;font-family:'Jost',sans-serif;font-size:.82rem;color:var(--dark);background:#fff;outline:none;transition:border-color .2s;width:100%}
+.ticket-fi:focus{border-color:var(--gold)}
+.ticket-ta{min-height:120px;resize:vertical}
+.ticket-select{appearance:none;cursor:pointer}
+.ticket-submit{width:100%;padding:.88rem;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:#fff;border:none;border-radius:6px;font-family:'Jost',sans-serif;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;transition:opacity .2s;margin-top:.5rem}
+.ticket-submit:hover{opacity:.88}
+.ticket-success{text-align:center;padding:2rem;display:none}
+.ticket-success.show{display:block}
+.ticket-success-em{font-size:2.5rem;margin-bottom:.8rem}
+.ticket-success-t{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--dark);margin-bottom:.4rem}
+.ticket-success-s{font-size:.76rem;color:var(--mid)}
+.ticket-ref{display:inline-block;margin-top:.8rem;padding:.4rem 1rem;background:rgba(201,169,110,.1);border-radius:4px;font-size:.72rem;color:var(--gold);letter-spacing:.1em}
+.help-contact-bar{display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap}
+.help-contact-card{flex:1;min-width:200px;background:#fff;border-radius:8px;padding:1.2rem;box-shadow:0 2px 16px rgba(180,120,100,.07);display:flex;align-items:center;gap:.8rem;text-decoration:none;border:1px solid var(--gborder);transition:border-color .2s}
+.help-contact-card:hover{border-color:var(--gold)}
+.hcc-icon{font-size:1.4rem;flex-shrink:0}
+.hcc-label{font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.15rem}
+.hcc-val{font-size:.78rem;color:var(--dark);font-weight:300}
+
+/* ════════════════════════════════════════
+   BREADCRUMB
+════════════════════════════════════════ */
+.breadcrumb{display:flex;align-items:center;gap:.4rem;font-size:.62rem;color:var(--light);margin-bottom:1.2rem;flex-wrap:wrap}
+.bc-link{background:none;border:none;color:var(--gold);cursor:pointer;font-family:'Jost',sans-serif;font-size:.62rem;padding:0;text-decoration:underline;text-underline-offset:2px}
+.bc-sep{color:var(--gborder)}
+.bc-current{color:var(--mid)}
+
+/* ════════════════════════════════════════
+   ENHANCED EMPTY STATE
+════════════════════════════════════════ */
+.empty-state{text-align:center;padding:5rem 2rem;grid-column:1/-1;animation:fadeUp .4s ease both}
+.empty-state-em{font-size:3rem;margin-bottom:1rem;opacity:.35}
+.empty-state-t{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;color:var(--mid);margin-bottom:.5rem}
+.empty-state-s{font-size:.76rem;color:var(--light);margin-bottom:1.8rem;max-width:320px;margin-left:auto;margin-right:auto;line-height:1.7}
+.pc-wish.wishlisted{background:rgba(212,132,154,.12)}
+.pc-wish.wishlisted::after{content:'';background:var(--dusty)}
 </style>
 </head>
 <body>
@@ -568,6 +699,8 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     <li><button onclick="goTo('home','#feed')">Gallery</button></li>
     <li><button onclick="goTo('home','#contact')">Contact</button></li>
     <li><button onclick="goTo('track')">Track Order</button></li>
+    <li><button onclick="goTo('help')">Help</button></li>
+    <li><button class="wish-nav-btn" onclick="goTo('wishlist')" id="navWishBtn">🤍 Saved<span class="wish-nav-count" id="wishNavCount" style="display:none">0</span></button></li>
   </ul>
   <button class="nav-cart-btn" onclick="goTo('cart')">🛍 Cart <span class="cart-badge" id="cartBadge">0</span></button>
 </nav>
@@ -681,11 +814,13 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     <p class="shop-sub">Curated pastels for every chapter of your story</p>
   </div>
   <div class="shop-controls">
+    <button class="filter-toggle-btn" onclick="toggleFilterSidebar()">⚙ Filters <span class="active-filter-count" id="activeFilterCount" style="display:none">0</span></button>
     <div class="shop-search"><span class="shop-search-icon">🔍</span><input type="text" id="shopSearch" placeholder="Search styles…" oninput="renderShop()"/></div>
     <select class="shop-sort" id="shopSort" onchange="renderShop()">
       <option value="">Sort by</option>
       <option value="low">Price: Low to High</option>
       <option value="high">Price: High to Low</option>
+      <option value="new">Newest First</option>
     </select>
   </div>
   <div class="filters" id="filterBar">
@@ -696,7 +831,40 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
     <button class="filter-btn" data-filter="suit">Suit Sets</button>
     <button class="filter-btn" data-filter="sharara">Shararas</button>
   </div>
-  <div class="shop-wrap"><div class="product-grid" id="productGrid"></div></div>
+  <div class="shop-layout">
+    <!-- Filter Sidebar -->
+    <aside class="filter-sidebar" id="filterSidebar">
+      <p class="fs-title">✦ Filter & Refine</p>
+      <div class="fs-section">
+        <span class="fs-label">Price Range</span>
+        <div class="price-slider-wrap">
+          <div class="price-range-display">
+            <span id="priceMinLabel">₹0</span>
+            <span id="priceMaxLabel">₹5,000</span>
+          </div>
+          <div class="slider-track">
+            <div class="slider-range-fill" id="sliderFill"></div>
+            <input type="range" class="price-slider" id="sliderMin" min="0" max="5000" step="100" value="0" oninput="onPriceSlider()"/>
+            <input type="range" class="price-slider" id="sliderMax" min="0" max="5000" step="100" value="5000" oninput="onPriceSlider()"/>
+          </div>
+        </div>
+      </div>
+      <div class="fs-section">
+        <span class="fs-label">Size</span>
+        <div class="fs-size-grid">
+          <button class="fs-size-btn" data-size="XS" onclick="toggleSizeFilter(this)">XS</button>
+          <button class="fs-size-btn" data-size="S" onclick="toggleSizeFilter(this)">S</button>
+          <button class="fs-size-btn" data-size="M" onclick="toggleSizeFilter(this)">M</button>
+          <button class="fs-size-btn" data-size="L" onclick="toggleSizeFilter(this)">L</button>
+          <button class="fs-size-btn" data-size="XL" onclick="toggleSizeFilter(this)">XL</button>
+          <button class="fs-size-btn" data-size="XXL" onclick="toggleSizeFilter(this)">XXL</button>
+        </div>
+      </div>
+      <button class="fs-clear-btn" onclick="clearAllFilters()">✕ Clear All Filters</button>
+    </aside>
+    <!-- Product Grid -->
+    <div class="product-grid" id="productGrid"></div>
+  </div>
 </div>
 
 <!-- ════════════════ PDP ════════════════ -->
@@ -952,6 +1120,129 @@ footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;back
   </div>
 </div>
 
+
+<!-- ════════════════ WISHLIST ════════════════ -->
+<div class="view" id="view-wishlist">
+  <div class="wishlist-wrap">
+    <button class="pay-back-btn" onclick="goTo('shop')">← Back to Shop</button>
+    <div class="wishlist-header">
+      <h1 class="wishlist-title">Your Saved Pieces</h1>
+      <p class="wishlist-count" id="wishlistCount"></p>
+    </div>
+    <div id="wishlistContent"></div>
+  </div>
+</div>
+
+<!-- ════════════════ HELP ════════════════ -->
+<div class="view" id="view-help">
+  <div class="help-wrap">
+    <button class="pay-back-btn" onclick="goTo('home')">← Back to Home</button>
+    <div class="help-header">
+      <p class="help-eyebrow">Support Centre</p>
+      <h1 class="help-title">How can we help you?</h1>
+      <p class="help-sub">Browse our FAQs or raise a ticket and we'll get back to you within 24 hours.</p>
+    </div>
+
+    <!-- Quick Contact -->
+    <div class="help-contact-bar">
+      <a class="help-contact-card" href="https://wa.me/918444929090" target="_blank">
+        <span class="hcc-icon">💬</span>
+        <div><p class="hcc-label">WhatsApp</p><p class="hcc-val">Chat with us</p></div>
+      </a>
+      <a class="help-contact-card" href="mailto:pastelstory@gmail.com">
+        <span class="hcc-icon">✉️</span>
+        <div><p class="hcc-label">Email Us</p><p class="hcc-val">pastelstory@gmail.com</p></div>
+      </a>
+      <div class="help-contact-card" style="cursor:default">
+        <span class="hcc-icon">🕐</span>
+        <div><p class="hcc-label">Response Time</p><p class="hcc-val">Within 24 hours</p></div>
+      </div>
+    </div>
+
+    <!-- FAQs -->
+    <div class="faq-section">
+      <p class="faq-title">Frequently Asked Questions</p>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How do I track my order?<span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Click "Track Order" in the navigation bar and enter your Order ID (e.g. TPS-977039). Your Order ID is shared in the WhatsApp confirmation message.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">What payment methods do you accept?<span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We accept all UPI payments (Google Pay, PhonePe, Paytm, BHIM) via our QR code or direct UPI ID. You can also enter your UPI ID and pay directly.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How long does delivery take?<span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Standard delivery takes 5–7 working days within India. We dispatch orders within 24–48 hours of payment confirmation.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">Can I return or exchange an item?<span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes! We accept exchanges within 7 days of delivery. Please WhatsApp us with your order ID and photos of the item. Returns are accepted for defective pieces only.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">How do I know which size to choose?<span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">We recommend going one size up if you are between sizes. You can also WhatsApp us your measurements and we will suggest the best fit for you.</div></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <button class="faq-q">Is Cash on Delivery (COD) available?<span class="faq-chevron">▼</span></button>
+        <div class="faq-a"><div class="faq-a-inner">Currently we only accept UPI payments. COD is not available at this time. We are working on adding more payment options soon.</div></div>
+      </div>
+    </div>
+
+    <!-- Ticket Form -->
+    <div class="ticket-section">
+      <h2 class="ticket-title">Submit a Ticket</h2>
+      <p class="ticket-sub">Can't find your answer above? Fill out the form and we'll get back to you within 24 hours.</p>
+      <div id="ticketFormWrap">
+        <div class="ticket-row">
+          <div class="ticket-fg">
+            <label class="ticket-fl">Full Name *</label>
+            <input class="ticket-fi" id="tkName" type="text" placeholder="Your full name"/>
+          </div>
+          <div class="ticket-fg">
+            <label class="ticket-fl">Phone Number</label>
+            <input class="ticket-fi" id="tkPhone" type="tel" placeholder="+91 98765 43210"/>
+          </div>
+        </div>
+        <div class="ticket-row">
+          <div class="ticket-fg">
+            <label class="ticket-fl">Email Address *</label>
+            <input class="ticket-fi" id="tkEmail" type="email" placeholder="you@example.com"/>
+          </div>
+          <div class="ticket-fg">
+            <label class="ticket-fl">Order ID (if applicable)</label>
+            <input class="ticket-fi" id="tkOrderId" type="text" placeholder="e.g. TPS-977039"/>
+          </div>
+        </div>
+        <div class="ticket-fg">
+          <label class="ticket-fl">Subject *</label>
+          <select class="ticket-fi ticket-select" id="tkSubject">
+            <option value="">Select a topic…</option>
+            <option>Order not received</option>
+            <option>Wrong item delivered</option>
+            <option>Payment issue</option>
+            <option>Return / Exchange request</option>
+            <option>Size or product query</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="ticket-fg">
+          <label class="ticket-fl">Message *</label>
+          <textarea class="ticket-fi ticket-ta" id="tkMessage" placeholder="Describe your issue in detail…"></textarea>
+        </div>
+        <button class="ticket-submit" onclick="submitTicket()">✦ Submit Ticket</button>
+      </div>
+      <div class="ticket-success" id="ticketSuccess">
+        <div class="ticket-success-em">🌸</div>
+        <p class="ticket-success-t">Ticket Submitted!</p>
+        <p class="ticket-success-s">Thank you for reaching out. We'll respond within 24 hours via WhatsApp or email.</p>
+        <span class="ticket-ref" id="ticketRef"></span>
+        <br><br>
+        <button class="btn-ghost" onclick="goTo('home')" style="display:inline-flex;margin:0 auto">← Back to Shopping</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- ══ SUCCESS MODAL ══ -->
 <div class="modal-bg" id="successModal">
   <div class="modal">
@@ -1166,6 +1457,9 @@ products = products.map(p => {
 
 let cart = JSON.parse(localStorage.getItem('pastelCart') || '[]');
 let curView = 'home', curFilter = 'all', editId = null;
+let curPriceFilter = 'all', curSizeFilters = new Set(), curPriceMin = 0, curPriceMax = 5000;
+let wishlist = JSON.parse(localStorage.getItem('pastelWishlist') || '[]');
+let lastPdpFromFilter = 'all'; // breadcrumb tracking
 let pendingMainImg = '';
 
 /* ══════════════════════════════════════
@@ -1191,6 +1485,7 @@ function goTo(view, anchor) {
   if (view === 'shop') renderShop();
   if (view === 'cart') renderCart();
   if (view === 'home') renderArrivals();
+  if (view === 'wishlist') renderWishlist();
   if (view === 'track') { document.getElementById('trackResult').innerHTML=''; document.getElementById('trackInput').value=''; }
   if (view !== 'pdp') setPageTitle('');
   if (anchor) setTimeout(() => { const el=document.querySelector(anchor); if(el) el.scrollIntoView({behavior:'smooth'}); }, 120);
@@ -1271,9 +1566,29 @@ function renderShop() {
   const sortVal = document.getElementById('shopSort')?.value||'';
   let list = curFilter==='all'?[...products]:products.filter(p=>p.category===curFilter);
   if (query) list = list.filter(p=>p.name.toLowerCase().includes(query)||(p.desc||'').toLowerCase().includes(query));
+  // Price slider filter
+  if (curPriceMin > 0 || curPriceMax < 5000) {
+    list = list.filter(p => p.price >= curPriceMin && p.price <= curPriceMax);
+  }
+  // Size filter
+  if (curSizeFilters.size > 0) list = list.filter(p => (p.sizes||[]).some(s => curSizeFilters.has(s)));
+  // Sort
   if (sortVal==='low')  list.sort((a,b)=>a.price-b.price);
-  if (sortVal==='high') list.sort((a,b)=>b.price-a.price);
-  if (!list.length) { grid.innerHTML=`<div class="empty"><div class="empty-i">🌸</div><p class="empty-t">No pieces found.</p></div>`; return; }
+  else if (sortVal==='high') list.sort((a,b)=>b.price-a.price);
+  else if (sortVal==='new') list.sort((a,b)=>b.id-a.id);
+  // Active filter count badge
+  const activeCount = ((curPriceMin > 0 || curPriceMax < 5000) ? 1 : 0) + curSizeFilters.size;
+  const badge = document.getElementById('activeFilterCount');
+  if (badge) { badge.textContent = activeCount; badge.style.display = activeCount > 0 ? 'flex' : 'none'; }
+  if (!list.length) {
+    grid.innerHTML = `<div class="empty-state">
+      <div class="empty-state-em">🔍</div>
+      <p class="empty-state-t">No pieces match your filters</p>
+      <p class="empty-state-s">Try adjusting your size, price range, or search term to discover more styles.</p>
+      <button class="btn-gold" onclick="clearAllFilters()">Clear All Filters</button>
+    </div>`;
+    return;
+  }
   grid.innerHTML = list.map(p => {
     const img0=(p.imgs||[])[0]||'', img1=(p.imgs||[])[1]||'';
     const bg = img0?'':`background:${GRAD[p.color]||GRAD.blush}`;
@@ -1291,7 +1606,7 @@ function renderShop() {
         <div class="pc-img-ov"><span class="pc-img-ov-txt">View Details</span></div>
         ${badgeLbl?`<span class="${badgeCls}">${badgeLbl}</span>`:''}
         ${lowStock?`<span class="low-stock-badge">🔥 Only ${stockNum} left!</span>`:''}
-        <button class="pc-wish" onclick="event.stopPropagation()">🤍</button>
+        <button class="pc-wish ${wishlist.includes(p.id)?'wishlisted':''}" onclick="event.stopPropagation();toggleWish(${p.id},this)" title="${wishlist.includes(p.id)?'Remove from Wishlist':'Save to Wishlist'}">${wishlist.includes(p.id)?'❤️':'🤍'}</button>
       </div>
       <div class="pc-body">
         <p class="pc-cat">${CAT_LABEL[p.category]||p.category}</p>
@@ -1314,7 +1629,9 @@ function renderShop() {
 document.getElementById('filterBar').addEventListener('click', e => {
   const btn = e.target.closest('.filter-btn'); if(!btn) return;
   document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active'); curFilter=btn.dataset.filter; renderShop();
+  btn.classList.add('active'); curFilter=btn.dataset.filter;
+  lastPdpFromFilter = curFilter;
+  renderShop();
 });
 
 function quickAdd(id) {
@@ -1331,6 +1648,18 @@ function quickAdd(id) {
    PDP RENDER — MULTI-IMAGE GALLERY + ZOOM
 ══════════════════════════════════════ */
 function renderPDP(p) {
+  // Breadcrumb: track which category the user came from
+  const bcLabel = lastPdpFromFilter === 'all' ? 'All Pieces'
+    : lastPdpFromFilter === 'wishlist' ? 'Wishlist'
+    : (CAT_LABEL[lastPdpFromFilter] || lastPdpFromFilter);
+  const bcTarget = lastPdpFromFilter === 'wishlist' ? 'wishlist' : 'shop';
+  const breadcrumbHtml = `<div class="breadcrumb">
+    <button class="bc-link" onclick="goTo('home')">Home</button>
+    <span class="bc-sep">›</span>
+    <button class="bc-link" onclick="goTo('${bcTarget}')">${bcLabel}</button>
+    <span class="bc-sep">›</span>
+    <span class="bc-current">${p.name}</span>
+  </div>`;
   const imgs = (p.imgs||[]).filter(Boolean);
   const mainImg = imgs[0]||'';
   const disc = p.oldPrice?Math.round((1-p.price/p.oldPrice)*100):0;
@@ -1348,7 +1677,7 @@ function renderPDP(p) {
 
   const sizesHtml = (p.sizes||[]).map(s=>`<button class="pdp-sz" onclick="pdpSelectSize(this)">${s}</button>`).join('');
 
-  document.getElementById('pdpWrap').innerHTML = `
+  document.getElementById('pdpWrap').innerHTML = breadcrumbHtml + `
     <div class="pdp-gallery">
       <div class="pdp-zoom-container" id="pdpZoomBox">
         ${mainImg
@@ -1399,7 +1728,7 @@ function renderPDP(p) {
         ${p.oos
           ?`<button class="pdp-btn-cart" disabled>❌ Out of Stock</button>`
           :`<button class="pdp-btn-cart" onclick="pdpAddToCart(${p.id})">🛍 Add to Cart</button>`}
-        <button class="pdp-btn-wish">🤍 Wishlist</button>
+        <button class="pdp-btn-wish" id="pdpWishBtn" onclick="toggleWishPdp(${p.id})">${wishlist.includes(p.id) ? "❤️ Saved to Wishlist" : "🤍 Save to Wishlist"}</button>
       </div>
       <div class="pdp-highlights">
         <div class="pdp-highlight-item"><span class="pdp-highlight-icon">✦</span><span><strong>Free shipping</strong> on orders above ₹999</span></div>
@@ -2116,8 +2445,214 @@ function saveGallImg(i) {
   toast('✅ Gallery photo ' + (i+1) + ' saved!');
 }
 
+/* ══════════════════════════════════════
+   FILTER SIDEBAR — PRICE + SIZE
+══════════════════════════════════════ */
+function toggleFilterSidebar() {
+  document.getElementById('filterSidebar').classList.toggle('open');
+}
+
+function onPriceSlider() {
+  let minVal = parseInt(document.getElementById('sliderMin').value);
+  let maxVal = parseInt(document.getElementById('sliderMax').value);
+  // Ensure min <= max with gap
+  if (minVal >= maxVal) {
+    if (document.activeElement.id === 'sliderMin') { minVal = maxVal - 100; document.getElementById('sliderMin').value = minVal; }
+    else { maxVal = minVal + 100; document.getElementById('sliderMax').value = maxVal; }
+  }
+  document.getElementById('priceMinLabel').textContent = '₹' + minVal.toLocaleString('en-IN');
+  document.getElementById('priceMaxLabel').textContent = '₹' + maxVal.toLocaleString('en-IN');
+  // Update fill bar
+  const fill = document.getElementById('sliderFill');
+  const pct1 = (minVal / 5000) * 100;
+  const pct2 = (maxVal / 5000) * 100;
+  fill.style.left  = pct1 + '%';
+  fill.style.width = (pct2 - pct1) + '%';
+  curPriceMin = minVal;
+  curPriceMax = maxVal;
+  renderShop();
+}
+
+function initPriceSlider() {
+  const fill = document.getElementById('sliderFill');
+  if (fill) { fill.style.left = '0%'; fill.style.width = '100%'; }
+}
+
+function toggleSizeFilter(btn) {
+  const size = btn.dataset.size;
+  if (curSizeFilters.has(size)) {
+    curSizeFilters.delete(size);
+    btn.classList.remove('active');
+  } else {
+    curSizeFilters.add(size);
+    btn.classList.add('active');
+  }
+  renderShop();
+}
+
+function clearAllFilters() {
+  curPriceFilter = 'all'; curPriceMin = 0; curPriceMax = 5000;
+  curSizeFilters.clear();
+  // Reset slider
+  const sMin = document.getElementById('sliderMin');
+  const sMax = document.getElementById('sliderMax');
+  if (sMin) sMin.value = 0;
+  if (sMax) sMax.value = 5000;
+  document.getElementById('priceMinLabel') && (document.getElementById('priceMinLabel').textContent = '₹0');
+  document.getElementById('priceMaxLabel') && (document.getElementById('priceMaxLabel').textContent = '₹5,000');
+  initPriceSlider();
+  document.querySelectorAll('.fs-size-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('shopSearch').value = '';
+  renderShop();
+}
+
+/* ══════════════════════════════════════
+   WISHLIST SYSTEM
+══════════════════════════════════════ */
+function saveWishlist() {
+  localStorage.setItem('pastelWishlist', JSON.stringify(wishlist));
+  updateWishCount();
+}
+
+function updateWishCount() {
+  const count = wishlist.length;
+  const el = document.getElementById('wishNavCount');
+  if (el) { el.textContent = count; el.style.display = count > 0 ? 'flex' : 'none'; }
+}
+
+function toggleWish(id, btn) {
+  const idx = wishlist.indexOf(id);
+  if (idx > -1) {
+    wishlist.splice(idx, 1);
+    if (btn) { btn.textContent = '🤍'; btn.classList.remove('wishlisted'); btn.title='Save to Wishlist'; }
+    toast('Removed from wishlist');
+  } else {
+    wishlist.push(id);
+    if (btn) { btn.textContent = '❤️'; btn.classList.add('wishlisted'); btn.title='Remove from Wishlist'; }
+    toast('✦ Saved to wishlist!');
+  }
+  saveWishlist();
+}
+
+function toggleWishPdp(id) {
+  const btn = document.getElementById('pdpWishBtn');
+  const idx = wishlist.indexOf(id);
+  if (idx > -1) {
+    wishlist.splice(idx, 1);
+    if (btn) btn.innerHTML = '🤍 Save to Wishlist';
+    toast('Removed from wishlist');
+  } else {
+    wishlist.push(id);
+    if (btn) btn.innerHTML = '❤️ Saved to Wishlist';
+    toast('✦ Saved to wishlist!');
+  }
+  saveWishlist();
+  // Refresh card heart in shop if visible
+  const card = document.querySelector(`.pc-wish[onclick*="toggleWish(${id},"]`);
+  if (card) {
+    card.textContent = wishlist.includes(id) ? '❤️' : '🤍';
+    card.classList.toggle('wishlisted', wishlist.includes(id));
+  }
+}
+
+function renderWishlist() {
+  const content = document.getElementById('wishlistContent');
+  const countEl = document.getElementById('wishlistCount');
+  if (!content) return;
+  const items = products.filter(p => wishlist.includes(p.id));
+  if (countEl) countEl.textContent = items.length === 0 ? '' : items.length + ' saved piece' + (items.length !== 1 ? 's' : '');
+  if (items.length === 0) {
+    content.innerHTML = `<div class="wishlist-empty">
+      <div class="wl-empty-em">🤍</div>
+      <p class="wl-empty-t">Your wishlist is empty</p>
+      <p class="wl-empty-s">Save your favourite pieces by tapping the heart icon on any product.</p>
+      <button class="btn-gold" onclick="goTo('shop')">Explore the Collection →</button>
+    </div>`;
+    return;
+  }
+  content.innerHTML = `<div class="wishlist-grid">${items.map(p => {
+    const img = (p.imgs||[])[0]||'';
+    const price = '₹' + Number(p.price).toLocaleString('en-IN');
+    const oldPrice = p.oldPrice ? '<span class="wl-old">₹' + Number(p.oldPrice).toLocaleString('en-IN') + '</span>' : '';
+    return `<div class="wl-card">
+      <div class="wl-img" onclick="lastPdpFromFilter='wishlist';openPDP(${p.id})">
+        ${img ? `<img src="${img}" alt="${p.name}" loading="lazy"/>` : `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;background:${GRAD[p.color]||GRAD.blush}">${p.emoji||'👗'}</div>`}
+        <button class="wl-remove" onclick="event.stopPropagation();removeFromWishlist(${p.id},this)" title="Remove from wishlist">❌</button>
+      </div>
+      <div class="wl-body">
+        <p class="wl-cat">${CAT_LABEL[p.category]||p.category}</p>
+        <p class="wl-name">${p.name}</p>
+        <p class="wl-price">${price}${oldPrice}</p>
+        <div class="wl-actions">
+          <button class="wl-atc" ${p.oos?'disabled':''} onclick="quickAdd(${p.id});toast('Added to cart!')">
+            ${p.oos?'Out of Stock':'🛍 Add to Cart'}
+          </button>
+          <button class="wl-view" onclick="lastPdpFromFilter='wishlist';openPDP(${p.id})">View</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function removeFromWishlist(id, btn) {
+  const idx = wishlist.indexOf(id);
+  if (idx > -1) wishlist.splice(idx, 1);
+  saveWishlist();
+  toast('Removed from wishlist');
+  renderWishlist();
+}
+
+/* ══════════════════════════════════════
+   FAQ TOGGLE
+══════════════════════════════════════ */
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ══════════════════════════════════════
+   TICKET SUBMISSION
+══════════════════════════════════════ */
+function submitTicket() {
+  const name    = document.getElementById('tkName').value.trim();
+  const email   = document.getElementById('tkEmail').value.trim();
+  const subject = document.getElementById('tkSubject').value;
+  const message = document.getElementById('tkMessage').value.trim();
+  if (!name)    { toast('Please enter your name'); return; }
+  if (!email)   { toast('Please enter your email'); return; }
+  if (!subject) { toast('Please select a subject'); return; }
+  if (!message) { toast('Please describe your issue'); return; }
+
+  const phone   = document.getElementById('tkPhone').value.trim();
+  const orderId = document.getElementById('tkOrderId').value.trim();
+  const ref     = 'TKT-' + Date.now().toString().slice(-6);
+
+  // Send to WhatsApp as fallback — always works
+  const waMsg = encodeURIComponent(
+    '🎫 Support Ticket: ' + ref + '\n' +
+    'Name: ' + name + '\n' +
+    (phone ? 'Phone: ' + phone + '\n' : '') +
+    'Email: ' + email + '\n' +
+    (orderId ? 'Order ID: ' + orderId + '\n' : '') +
+    'Subject: ' + subject + '\n\n' +
+    message
+  );
+  window.open('https://wa.me/918444929090?text=' + waMsg, '_blank');
+
+  // Also try Sheets
+  if (SHEETS_URL) {
+    const params = new URLSearchParams({ action:'ticket', ref, name, email, phone, orderId, subject, message, timestamp: new Date().toLocaleString('en-IN') });
+    try { fetch(SHEETS_URL + '?' + params.toString(), { method:'GET', mode:'no-cors' }); } catch(e) {}
+  }
+
+  document.getElementById('ticketFormWrap').style.display = 'none';
+  document.getElementById('ticketSuccess').classList.add('show');
+  document.getElementById('ticketRef').textContent = 'Ticket ID: ' + ref;
+}
+
 /* ══ INIT ══ */
-updateBadge();initReveal();renderArrivals();applySiteImgs();
+updateBadge();initReveal();renderArrivals();applySiteImgs();updateWishCount();setTimeout(initPriceSlider,100);
 </script>
 </body>
 </html>
